@@ -4,12 +4,7 @@ import {
   Search,
   Copy,
   Check,
-  ChevronDown,
-  ChevronUp,
-  ShieldCheck,
-  Clock,
-  Key,
-  Layers
+  ShieldCheck
 } from 'lucide-react';
 
 export default function AuditLog({ logs = [] }) {
@@ -55,13 +50,13 @@ export default function AuditLog({ logs = [] }) {
   };
 
   return (
-    <div className="glass-panel p-5 mb-6">
+    <div className="glass-panel p-6 mb-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
         <div>
           <div className="flex items-center gap-2">
             <Database className="w-5 h-5 text-cyan-400" />
-            <h3 className="text-sm font-bold text-slate-100 uppercase tracking-wide">
+            <h3 className="text-sm font-bold text-white uppercase tracking-wide">
               Immutable Pre-Execution Audit Trail
             </h3>
           </div>
@@ -71,7 +66,7 @@ export default function AuditLog({ logs = [] }) {
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
+          <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-bold">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>100% Pre-Dispatch Verified</span>
           </div>
@@ -79,22 +74,22 @@ export default function AuditLog({ logs = [] }) {
       </div>
 
       {/* Filter Bar */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 p-3 bg-slate-900/60 rounded-xl border border-slate-800/80">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-5 p-4 bg-slate-900/80 rounded-xl border border-slate-800">
         <div className="relative">
-          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
             placeholder="Search Audit ID, TXN ID, or Idempotency Key..."
             value={searchTxn}
             onChange={(e) => setSearchTxn(e.target.value)}
-            className="w-full bg-slate-950 border border-slate-700/90 text-xs rounded-lg pl-9 pr-3 py-2 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+            className="w-full bg-slate-950 border border-slate-700 text-xs rounded-lg pl-10 pr-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 font-medium"
           />
         </div>
 
         <select
           value={filterAction}
           onChange={(e) => setFilterAction(e.target.value)}
-          className="bg-slate-950 border border-slate-700/90 text-xs rounded-lg px-2.5 py-2 text-slate-300 focus:outline-none focus:border-cyan-500"
+          className="bg-slate-950 border border-slate-700 text-xs rounded-lg px-3.5 py-2.5 text-slate-300 focus:outline-none focus:border-cyan-500 font-medium cursor-pointer"
         >
           <option value="">All Dispatched Actions</option>
           <option value="RETRY_PAYMENT">RETRY_PAYMENT</option>
@@ -107,7 +102,7 @@ export default function AuditLog({ logs = [] }) {
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
-          className="bg-slate-950 border border-slate-700/90 text-xs rounded-lg px-2.5 py-2 text-slate-300 focus:outline-none focus:border-cyan-500"
+          className="bg-slate-950 border border-slate-700 text-xs rounded-lg px-3.5 py-2.5 text-slate-300 focus:outline-none focus:border-cyan-500 font-medium cursor-pointer"
         >
           <option value="">All Execution Statuses</option>
           <option value="SUCCESS">SUCCESS</option>
@@ -118,23 +113,23 @@ export default function AuditLog({ logs = [] }) {
         </select>
       </div>
 
-      {/* Ledger Table */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/40 max-h-[500px]">
-        <table className="w-full text-left text-xs text-slate-300">
-          <thead className="bg-slate-900/95 text-[11px] text-slate-400 uppercase tracking-wider sticky top-0 border-b border-slate-800 z-10 backdrop-blur-md select-none">
+      {/* Proper Ledger Table */}
+      <div className="proper-table-container rounded-xl border border-slate-800 bg-slate-950/60 max-h-[540px] shadow-inner">
+        <table className="proper-table">
+          <thead>
             <tr>
-              <th className="py-3 px-3">Audit ID</th>
-              <th className="py-3 px-3">Txn ID</th>
-              <th className="py-3 px-3">AI Recom</th>
-              <th className="py-3 px-3">Confidence</th>
-              <th className="py-3 px-3">Policy Gate</th>
-              <th className="py-3 px-3">Dispatched Action</th>
-              <th className="py-3 px-3">State</th>
-              <th className="py-3 px-3">Idempotency Key</th>
-              <th className="py-3 px-3">Timestamp</th>
+              <th className="w-[140px]">Audit ID</th>
+              <th className="w-[130px]">Txn ID</th>
+              <th className="w-[160px]">AI Recommendation</th>
+              <th className="w-[110px]">Confidence</th>
+              <th className="w-[130px]">Policy Gate</th>
+              <th className="w-[160px]">Dispatched Action</th>
+              <th className="w-[130px]">State</th>
+              <th className="w-[180px]">Idempotency Key</th>
+              <th className="w-[120px]">Timestamp</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60 font-mono text-[11px]">
+          <tbody className="divide-y divide-slate-800/70 font-medium">
             {filtered.map((log, idx) => {
               const isExpanded = expandedLogId === log.audit_id;
               const isCopied = copiedKey === log.audit_id;
@@ -143,69 +138,85 @@ export default function AuditLog({ logs = [] }) {
                 <React.Fragment key={log.audit_id || idx}>
                   <tr
                     onClick={() => setExpandedLogId(isExpanded ? null : log.audit_id)}
-                    className={`hover:bg-slate-800/40 cursor-pointer transition-colors ${
-                      isExpanded ? 'bg-cyan-500/10' : ''
+                    className={`hover:bg-slate-800/50 cursor-pointer transition-colors ${
+                      isExpanded ? 'bg-cyan-500/15 border-l-4 border-cyan-400' : ''
                     }`}
                   >
                     {/* Audit ID */}
-                    <td className="py-2.5 px-3 text-cyan-400 font-bold">
-                      <div className="flex items-center gap-1.5 group/aid">
+                    <td className="text-cyan-400 font-bold whitespace-nowrap">
+                      <div className="flex items-center gap-2 group/aid">
                         <span>{log.audit_id}</span>
                         <button
                           onClick={(e) => handleCopy(e, log.audit_id, log.audit_id)}
-                          className="opacity-0 group-hover/aid:opacity-100 p-0.5 hover:text-white text-slate-500 transition-opacity"
+                          className="opacity-0 group-hover/aid:opacity-100 p-1 hover:text-white text-slate-500 transition-opacity cursor-pointer"
                           title="Copy Audit ID"
                         >
-                          {isCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                          {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                         </button>
                       </div>
                     </td>
 
                     {/* Txn ID */}
-                    <td className="py-2.5 px-3 text-slate-200 font-bold">{log.txn_id}</td>
+                    <td className="text-white font-bold whitespace-nowrap">{log.txn_id}</td>
 
                     {/* AI Recommendation */}
-                    <td className="py-2.5 px-3 text-violet-300">{log.ai_recommendation || '—'}</td>
+                    <td className="text-violet-300 font-semibold whitespace-nowrap">
+                      {log.ai_recommendation || '—'}
+                    </td>
 
                     {/* Confidence */}
-                    <td className="py-2.5 px-3 text-slate-300">
+                    <td className="text-slate-300 font-semibold whitespace-nowrap">
                       {log.confidence ? `${(log.confidence * 100).toFixed(1)}%` : '—'}
                     </td>
 
                     {/* Policy Decision */}
-                    <td className="py-2.5 px-3 text-emerald-400 font-bold">{log.policy_decision}</td>
+                    <td className="text-emerald-400 font-extrabold whitespace-nowrap">
+                      {log.policy_decision}
+                    </td>
 
                     {/* Action */}
-                    <td className="py-2.5 px-3 text-slate-200">{log.action}</td>
+                    <td className="text-white font-semibold whitespace-nowrap">{log.action}</td>
 
                     {/* Status */}
-                    <td className="py-2.5 px-3">{getStatusBadge(log.status)}</td>
+                    <td className="whitespace-nowrap">{getStatusBadge(log.status)}</td>
 
                     {/* Idempotency Key */}
-                    <td className="py-2.5 px-3 text-slate-400 max-w-[150px] truncate" title={log.idempotency_key}>
+                    <td className="text-slate-400 max-w-[180px] truncate font-medium" title={log.idempotency_key}>
                       {log.idempotency_key}
                     </td>
 
                     {/* Timestamp */}
-                    <td className="py-2.5 px-3 text-slate-400 whitespace-nowrap">
+                    <td className="text-slate-400 whitespace-nowrap font-medium">
                       {log.timestamp ? new Date(log.timestamp).toLocaleTimeString() : '—'}
                     </td>
                   </tr>
 
                   {/* Expandable Payload Drawer */}
                   {isExpanded && (
-                    <tr className="bg-slate-900/90">
-                      <td colSpan="9" className="p-4 border-b border-slate-800">
-                        <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 text-xs font-mono space-y-2">
-                          <div className="flex items-center justify-between text-slate-400 pb-1.5 border-b border-slate-800">
-                            <span className="font-bold text-slate-200">Execution Metadata & Cryptographic Payload</span>
-                            <span>Audit Record: {log.audit_id}</span>
+                    <tr className="bg-slate-900/95">
+                      <td colSpan="9" className="p-5 border-b border-slate-800">
+                        <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-3 shadow-md">
+                          <div className="flex items-center justify-between text-slate-300 pb-2 border-b border-slate-800 font-bold">
+                            <span className="text-white uppercase tracking-wider text-xs">Execution Metadata & Cryptographic Payload</span>
+                            <span className="text-cyan-400 text-xs">Record: {log.audit_id}</span>
                           </div>
-                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-slate-300">
-                            <div><strong>Execution ID:</strong> {log.execution_id || 'PENDING'}</div>
-                            <div><strong>Idempotency Key:</strong> {log.idempotency_key}</div>
-                            <div><strong>Enforced State:</strong> {log.status}</div>
-                            <div><strong>Timestamp:</strong> {log.timestamp}</div>
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 text-slate-300 text-xs font-medium">
+                            <div className="p-2.5 rounded-lg bg-slate-900/70 border border-slate-800">
+                              <span className="text-slate-500 block text-[11px] mb-0.5">Execution ID</span>
+                              <strong className="text-white font-bold">{log.execution_id || 'PENDING'}</strong>
+                            </div>
+                            <div className="p-2.5 rounded-lg bg-slate-900/70 border border-slate-800">
+                              <span className="text-slate-500 block text-[11px] mb-0.5">Idempotency Key</span>
+                              <strong className="text-cyan-300 font-bold truncate block" title={log.idempotency_key}>{log.idempotency_key}</strong>
+                            </div>
+                            <div className="p-2.5 rounded-lg bg-slate-900/70 border border-slate-800">
+                              <span className="text-slate-500 block text-[11px] mb-0.5">Enforced State</span>
+                              <strong className="text-emerald-400 font-bold">{log.status}</strong>
+                            </div>
+                            <div className="p-2.5 rounded-lg bg-slate-900/70 border border-slate-800">
+                              <span className="text-slate-500 block text-[11px] mb-0.5">Timestamp</span>
+                              <strong className="text-slate-200 font-bold">{log.timestamp}</strong>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -217,7 +228,7 @@ export default function AuditLog({ logs = [] }) {
 
             {filtered.length === 0 && (
               <tr>
-                <td colSpan="9" className="py-12 text-center text-slate-500 font-sans text-xs">
+                <td colSpan="9" className="py-16 text-center text-slate-400 text-sm font-semibold">
                   No audit log records match the selected query.
                 </td>
               </tr>
@@ -226,9 +237,9 @@ export default function AuditLog({ logs = [] }) {
         </table>
       </div>
 
-      <div className="flex items-center justify-between text-xs text-slate-400 mt-3 px-1">
-        <span>{filtered.length} audit records in immutable chain</span>
-        <span className="text-cyan-400 font-medium">Click any row to view cryptographic execution payload</span>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-400 mt-4 p-3.5 bg-slate-900/60 rounded-xl border border-slate-800">
+        <span className="font-semibold">{filtered.length} audit records in immutable chain</span>
+        <span className="text-cyan-400 font-bold">Click any row to inspect cryptographic execution payload</span>
       </div>
     </div>
   );

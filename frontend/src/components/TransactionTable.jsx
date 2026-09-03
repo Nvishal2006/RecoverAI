@@ -9,9 +9,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
-  AlertTriangle,
-  Sparkles,
-  ArrowUpRight
+  AlertTriangle
 } from 'lucide-react';
 
 export default function TransactionTable({
@@ -25,7 +23,7 @@ export default function TransactionTable({
   const [filterTier, setFilterTier] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [filterHoldout, setFilterHoldout] = useState('');
-  const [quickFilter, setQuickFilter] = useState('ALL'); // 'ALL' | 'ACTION_REQUIRED' | 'HIGH_VALUE' | 'VIP' | 'HOLDOUT' | 'RECOVERED'
+  const [quickFilter, setQuickFilter] = useState('ALL');
   const [copiedId, setCopiedId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 15;
@@ -39,11 +37,10 @@ export default function TransactionTable({
 
   const filtered = useMemo(() => {
     return transactions.filter(t => {
-      // Quick filter preset
       if (quickFilter === 'ACTION_REQUIRED') {
         if (t.status === 'RECOVERED' || t.is_holdout) return false;
       } else if (quickFilter === 'HIGH_VALUE') {
-        if (t.amount_paise < 5000000) return false; // >= ₹50,000
+        if (t.amount_paise < 5000000) return false;
       } else if (quickFilter === 'VIP') {
         if (t.customer_tier !== 'vip') return false;
       } else if (quickFilter === 'HOLDOUT') {
@@ -52,7 +49,6 @@ export default function TransactionTable({
         if (t.status !== 'RECOVERED' && t.status !== 'SUCCESS') return false;
       }
 
-      // Search term
       if (searchTerm) {
         const term = searchTerm.toLowerCase();
         const matchId = t.txn_id.toLowerCase().includes(term);
@@ -60,7 +56,6 @@ export default function TransactionTable({
         if (!matchId && !matchCust) return false;
       }
 
-      // Dropdown filters
       if (filterFailure && t.failure_code !== filterFailure) return false;
       if (filterTier && t.customer_tier !== filterTier) return false;
       if (filterStatus && t.status.toUpperCase() !== filterStatus.toUpperCase()) return false;
@@ -73,7 +68,6 @@ export default function TransactionTable({
     });
   }, [transactions, searchTerm, filterFailure, filterTier, filterStatus, filterHoldout, quickFilter]);
 
-  // Pagination
   const totalPages = Math.ceil(filtered.length / pageSize) || 1;
   const paginated = useMemo(() => {
     const start = (currentPage - 1) * pageSize;
@@ -126,25 +120,25 @@ export default function TransactionTable({
   };
 
   return (
-    <div className="glass-panel p-5 mb-6">
+    <div className="glass-panel p-6 mb-6">
       {/* Header & Quick Filter Chips */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
         <div>
-          <div className="flex items-center gap-2">
-            <h3 className="text-sm font-bold text-slate-100 uppercase tracking-wide">
+          <div className="flex items-center gap-3">
+            <h3 className="text-base font-bold text-white uppercase tracking-wider">
               Failed Transactions Ledger
             </h3>
-            <span className="text-xs font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+            <span className="text-xs text-slate-300 bg-slate-900 px-3 py-1 rounded-full border border-slate-800 font-bold">
               {transactions.length} Total
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Real-time feed with autonomous diagnostic tags, policy outcomes, and full trace inspectors
+          <p className="text-xs text-slate-400 mt-1">
+            Real-time feed with autonomous diagnostic tags, deterministic policy outcomes, and trace inspectors
           </p>
         </div>
 
         {/* Quick Filter Preset Chips */}
-        <div className="flex flex-wrap items-center gap-1.5 text-xs">
+        <div className="flex flex-wrap items-center gap-2 text-xs">
           {[
             { id: 'ALL', label: 'All Transactions' },
             { id: 'ACTION_REQUIRED', label: '⚡ Actionable' },
@@ -159,10 +153,10 @@ export default function TransactionTable({
                 setQuickFilter(chip.id);
                 setCurrentPage(1);
               }}
-              className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
+              className={`px-3.5 py-2 rounded-xl font-bold transition-all cursor-pointer ${
                 quickFilter === chip.id
-                  ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-slate-200 border border-slate-800'
+                  ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 shadow-sm'
+                  : 'bg-slate-900/90 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
               {chip.label}
@@ -172,9 +166,9 @@ export default function TransactionTable({
       </div>
 
       {/* Search & Custom Select Filters */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2.5 mb-4 p-3 bg-slate-900/60 rounded-xl border border-slate-800/80">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3.5 mb-5 p-4 bg-slate-900/80 rounded-xl border border-slate-800">
         <div className="relative md:col-span-2">
-          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
             placeholder="Search TXN ID or Customer ID..."
@@ -183,7 +177,7 @@ export default function TransactionTable({
               setSearchTerm(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full bg-slate-950 border border-slate-700/90 text-xs rounded-lg pl-9 pr-3 py-2 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+            className="w-full bg-slate-950 border border-slate-700 text-xs rounded-lg pl-10 pr-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
           />
         </div>
 
@@ -193,7 +187,7 @@ export default function TransactionTable({
             setFilterFailure(e.target.value);
             setCurrentPage(1);
           }}
-          className="bg-slate-950 border border-slate-700/90 text-xs rounded-lg px-2.5 py-2 text-slate-300 focus:outline-none focus:border-emerald-500"
+          className="bg-slate-950 border border-slate-700 text-xs rounded-lg px-3.5 py-2.5 text-slate-300 focus:outline-none focus:border-emerald-500 font-medium cursor-pointer"
         >
           <option value="">All Failure Reasons</option>
           <option value="network_error">Network Error</option>
@@ -210,7 +204,7 @@ export default function TransactionTable({
             setFilterTier(e.target.value);
             setCurrentPage(1);
           }}
-          className="bg-slate-950 border border-slate-700/90 text-xs rounded-lg px-2.5 py-2 text-slate-300 focus:outline-none focus:border-emerald-500"
+          className="bg-slate-950 border border-slate-700 text-xs rounded-lg px-3.5 py-2.5 text-slate-300 focus:outline-none focus:border-emerald-500 font-medium cursor-pointer"
         >
           <option value="">All Customer Tiers</option>
           <option value="standard">Standard</option>
@@ -224,7 +218,7 @@ export default function TransactionTable({
             setFilterStatus(e.target.value);
             setCurrentPage(1);
           }}
-          className="bg-slate-950 border border-slate-700/90 text-xs rounded-lg px-2.5 py-2 text-slate-300 focus:outline-none focus:border-emerald-500"
+          className="bg-slate-950 border border-slate-700 text-xs rounded-lg px-3.5 py-2.5 text-slate-300 focus:outline-none focus:border-emerald-500 font-medium cursor-pointer"
         >
           <option value="">All Statuses</option>
           <option value="FAILED">Failed</option>
@@ -234,24 +228,24 @@ export default function TransactionTable({
         </select>
       </div>
 
-      {/* Table Container */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/40">
-        <table className="w-full text-left text-xs text-slate-300">
-          <thead className="bg-slate-900/90 text-[11px] text-slate-400 uppercase tracking-wider border-b border-slate-800 select-none">
+      {/* Proper Table Container */}
+      <div className="proper-table-container rounded-xl border border-slate-800 bg-slate-950/60 shadow-inner">
+        <table className="proper-table">
+          <thead>
             <tr>
-              <th className="py-3 px-3.5">Transaction</th>
-              <th className="py-3 px-3">Customer</th>
-              <th className="py-3 px-3">Amount</th>
-              <th className="py-3 px-3">Failure Reason</th>
-              <th className="py-3 px-3">Tier</th>
-              <th className="py-3 px-3">Cohort</th>
-              <th className="py-3 px-3">Authorized Action</th>
-              <th className="py-3 px-3">Policy Gate</th>
-              <th className="py-3 px-3">Status</th>
-              <th className="py-3 px-3 text-right">Actions</th>
+              <th className="w-[140px]">Transaction ID</th>
+              <th className="w-[120px]">Customer</th>
+              <th className="w-[130px]">Amount</th>
+              <th className="w-[150px]">Failure Reason</th>
+              <th className="w-[100px]">Tier</th>
+              <th className="w-[120px]">Cohort</th>
+              <th className="w-[160px]">Authorized Action</th>
+              <th className="w-[150px]">Policy Gate</th>
+              <th className="w-[120px]">Status</th>
+              <th className="w-[150px] text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60 font-medium">
+          <tbody className="divide-y divide-slate-800/70 font-medium">
             {paginated.map((t) => {
               const isSelected = selectedTxnId === t.txn_id;
               const isCopied = copiedId === t.txn_id;
@@ -261,35 +255,35 @@ export default function TransactionTable({
                 <tr
                   key={t.txn_id}
                   onClick={() => onSelectTransaction(t.txn_id)}
-                  className={`hover:bg-slate-800/40 cursor-pointer transition-colors ${
-                    isSelected ? 'bg-emerald-500/10 border-l-2 border-emerald-500' : ''
+                  className={`hover:bg-slate-800/50 cursor-pointer transition-colors ${
+                    isSelected ? 'bg-emerald-500/15 border-l-4 border-emerald-500' : ''
                   }`}
                 >
                   {/* Transaction ID with Copy Button */}
-                  <td className="py-3 px-3.5 font-mono text-slate-200">
-                    <div className="flex items-center gap-1.5 group/id">
-                      <span className="font-bold text-slate-100">{t.txn_id}</span>
+                  <td className="text-white font-bold whitespace-nowrap">
+                    <div className="flex items-center gap-2 group/id">
+                      <span>{t.txn_id}</span>
                       <button
                         onClick={(e) => handleCopy(e, t.txn_id)}
-                        className="opacity-0 group-hover/id:opacity-100 p-1 hover:text-emerald-400 transition-opacity text-slate-500"
+                        className="opacity-0 group-hover/id:opacity-100 p-1 hover:text-emerald-400 transition-opacity text-slate-500 cursor-pointer"
                         title="Copy Txn ID"
                       >
-                        {isCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                        {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
                     </div>
                   </td>
 
                   {/* Customer ID */}
-                  <td className="py-3 px-3 font-mono text-slate-400 text-[11px]">
+                  <td className="text-slate-400 text-xs font-semibold whitespace-nowrap">
                     {t.customer_id}
                   </td>
 
                   {/* Amount */}
-                  <td className="py-3 px-3 font-mono font-bold text-slate-100">
-                    <div className="flex items-center gap-1">
+                  <td className="font-bold text-white whitespace-nowrap">
+                    <div className="flex items-center gap-1.5">
                       <span>₹{(t.amount_paise / 100).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
                       {isHighTicket && (
-                        <span className="text-[9px] bg-amber-500/20 text-amber-300 px-1 py-0.2 rounded font-sans uppercase">
+                        <span className="text-[10px] bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded uppercase font-bold">
                           High
                         </span>
                       )}
@@ -297,56 +291,56 @@ export default function TransactionTable({
                   </td>
 
                   {/* Failure Reason */}
-                  <td className="py-3 px-3">
-                    <span className="font-mono text-[11px] text-slate-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                  <td className="whitespace-nowrap">
+                    <span className="text-xs text-slate-300 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-800 font-semibold">
                       {t.failure_code}
                     </span>
                   </td>
 
                   {/* Tier */}
-                  <td className="py-3 px-3">{getTierBadge(t.customer_tier)}</td>
+                  <td className="whitespace-nowrap">{getTierBadge(t.customer_tier)}</td>
 
                   {/* Cohort Group */}
-                  <td className="py-3 px-3">
+                  <td className="whitespace-nowrap">
                     {t.is_holdout ? (
                       <span className="badge badge-holdout">Holdout 20%</span>
                     ) : (
-                      <span className="text-[11px] font-semibold text-emerald-400 flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span className="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
                         Active AI
                       </span>
                     )}
                   </td>
 
                   {/* Action Taken */}
-                  <td className="py-3 px-3 font-mono text-[11px] text-cyan-300">
+                  <td className="text-xs text-cyan-300 font-bold whitespace-nowrap">
                     {t.action_taken || <span className="text-slate-600">—</span>}
                   </td>
 
                   {/* Policy Gate Decision */}
-                  <td className="py-3 px-3 font-mono text-[11px]">
+                  <td className="text-xs whitespace-nowrap">
                     {t.policy_decision === 'APPROVED' && (
-                      <span className="text-emerald-400 font-bold flex items-center gap-1">
-                        <Check className="w-3 h-3" /> APPROVED
+                      <span className="text-emerald-400 font-extrabold flex items-center gap-1.5">
+                        <Check className="w-3.5 h-3.5" /> APPROVED
                       </span>
                     )}
                     {t.policy_decision === 'MANUAL_REVIEW' && (
-                      <span className="text-amber-400 font-bold flex items-center gap-1">
-                        <AlertTriangle className="w-3 h-3" /> MANUAL_REVIEW
+                      <span className="text-amber-400 font-extrabold flex items-center gap-1.5">
+                        <AlertTriangle className="w-3.5 h-3.5" /> MANUAL_REVIEW
                       </span>
                     )}
                     {t.policy_decision === 'NO_ACTION' && (
-                      <span className="text-slate-500 font-medium">NO_ACTION</span>
+                      <span className="text-slate-500 font-semibold">NO_ACTION</span>
                     )}
                     {!t.policy_decision && <span className="text-slate-600">—</span>}
                   </td>
 
                   {/* Status Badge */}
-                  <td className="py-3 px-3">{getStatusBadge(t.status)}</td>
+                  <td className="whitespace-nowrap">{getStatusBadge(t.status)}</td>
 
                   {/* Actions Column */}
-                  <td className="py-3 px-3 text-right">
-                    <div className="flex items-center justify-end gap-1.5">
+                  <td className="text-right whitespace-nowrap">
+                    <div className="flex items-center justify-end gap-2">
                       {!t.is_holdout && t.status !== 'RECOVERED' && (
                         <button
                           title="Evaluate with AI Agent"
@@ -354,9 +348,9 @@ export default function TransactionTable({
                             e.stopPropagation();
                             onEvaluateTransaction(t.txn_id);
                           }}
-                          className="px-2 py-1 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 text-[11px] font-semibold transition-all flex items-center gap-1"
+                          className="px-2.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
                         >
-                          <Play className="w-2.5 h-2.5 fill-current" />
+                          <Play className="w-3 h-3 fill-current" />
                           <span>Run AI</span>
                         </button>
                       )}
@@ -366,9 +360,9 @@ export default function TransactionTable({
                           e.stopPropagation();
                           onSelectTransaction(t.txn_id);
                         }}
-                        className="px-2 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] font-medium transition-all flex items-center gap-1"
+                        className="px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
                       >
-                        <Eye className="w-3 h-3" />
+                        <Eye className="w-3.5 h-3.5" />
                         <span>Trace</span>
                       </button>
                     </div>
@@ -379,8 +373,8 @@ export default function TransactionTable({
 
             {paginated.length === 0 && (
               <tr>
-                <td colSpan="10" className="py-12 text-center text-slate-500 text-xs font-medium">
-                  No transactions match the selected filters or search terms.
+                <td colSpan="10" className="py-16 text-center text-slate-400 text-sm font-semibold">
+                  No transactions match the selected filters or search query.
                 </td>
               </tr>
             )}
@@ -388,35 +382,34 @@ export default function TransactionTable({
         </table>
       </div>
 
-      {/* Pagination & Ledger Summary Footer */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 mt-4 px-1">
+      {/* Pagination Footer */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 mt-5 p-4 bg-slate-900/60 rounded-xl border border-slate-800">
         <div>
-          Showing <span className="font-mono text-slate-200">{filtered.length > 0 ? (currentPage - 1) * pageSize + 1 : 0}</span> to{' '}
-          <span className="font-mono text-slate-200">{Math.min(currentPage * pageSize, filtered.length)}</span> of{' '}
-          <span className="font-mono text-slate-200">{filtered.length}</span> filtered transactions
+          Showing <span className="text-white font-bold">{filtered.length > 0 ? (currentPage - 1) * pageSize + 1 : 0}</span> to{' '}
+          <span className="text-white font-bold">{Math.min(currentPage * pageSize, filtered.length)}</span> of{' '}
+          <span className="text-white font-bold">{filtered.length}</span> filtered transactions
         </div>
 
-        {/* Page navigation controls */}
         {totalPages > 1 && (
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
               disabled={currentPage === 1}
-              className="p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:pointer-events-none transition-all"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:pointer-events-none transition-all cursor-pointer"
             >
-              <ChevronLeft className="w-3.5 h-3.5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
 
-            <span className="px-3 py-1 text-xs font-mono text-slate-300 bg-slate-900 border border-slate-800 rounded-lg">
+            <span className="px-3.5 py-1.5 text-xs text-white bg-slate-950 border border-slate-700 rounded-lg font-bold">
               Page {currentPage} of {totalPages}
             </span>
 
             <button
               onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
               disabled={currentPage === totalPages}
-              className="p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:pointer-events-none transition-all"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:pointer-events-none transition-all cursor-pointer"
             >
-              <ChevronRight className="w-3.5 h-3.5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         )}

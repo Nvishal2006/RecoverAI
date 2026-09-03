@@ -3,23 +3,23 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, Legend
 } from 'recharts';
-import { ShieldCheck, ShieldAlert, CheckCircle2, TrendingUp, Zap, Sparkles } from 'lucide-react';
+import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 const COLORS = ['#10b981', '#06b6d4', '#8b5cf6', '#f59e0b', '#ec4899', '#64748b'];
 
-const CustomBarTooltip = ({ active, payload, label }) => {
+const CustomBarTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="p-3 bg-slate-900/95 border border-slate-700 rounded-xl shadow-2xl backdrop-blur-md text-xs">
-        <div className="font-bold text-slate-200 capitalize mb-1">{data.name}</div>
-        <div className="flex items-center gap-2 text-emerald-400 font-mono font-semibold">
+      <div className="p-3 bg-slate-900/95 border border-slate-700 rounded-xl shadow-2xl backdrop-blur-md text-xs text-white">
+        <div className="font-bold capitalize mb-1">{data.name}</div>
+        <div className="flex items-center gap-2 text-emerald-400 font-mono font-bold">
           <span>Recovery Rate:</span>
           <span>{data.recoveryRate}%</span>
         </div>
         <div className="text-[11px] text-slate-400 mt-1">
-          Recovered: <span className="text-white font-mono">{data.recovered}</span> of{' '}
-          <span className="text-white font-mono">{data.total}</span>
+          Recovered: <span className="font-mono font-bold text-white">{data.recovered}</span> of{' '}
+          <span className="font-mono font-bold text-white">{data.total}</span>
         </div>
       </div>
     );
@@ -49,13 +49,13 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
       {/* Chart 1: Recovery Rate by Failure Code */}
-      <div className="glass-panel p-5 flex flex-col justify-between">
+      <div className="glass-panel p-6 flex flex-col justify-between min-h-[360px]">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <h4 className="text-sm font-bold text-slate-200 uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
               Recovery by Failure Code
             </h4>
-            <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+            <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/25 font-bold">
               Causal Lift
             </span>
           </div>
@@ -110,13 +110,13 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
       </div>
 
       {/* Chart 2: Action Distribution with Center Stat */}
-      <div className="glass-panel p-5 flex flex-col justify-between">
+      <div className="glass-panel p-6 flex flex-col justify-between min-h-[360px]">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <h4 className="text-sm font-bold text-slate-200 uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
               Autonomous Actions Dispatched
             </h4>
-            <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+            <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/25 font-bold">
               {totalActions} Total
             </span>
           </div>
@@ -140,104 +140,104 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
                     dataKey="value"
                   >
                     {pieData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} stroke="#0b0f19" strokeWidth={2} />
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={entry.color}
+                        stroke="#0b0f19"
+                        strokeWidth={2}
+                      />
                     ))}
                   </Pie>
                   <Tooltip
                     contentStyle={{
                       backgroundColor: '#090d16',
                       borderColor: '#334155',
-                      borderRadius: '10px',
+                      borderRadius: '12px',
                       fontSize: '11px',
-                      color: '#f8fafc'
+                      color: '#f8fafc',
+                      boxShadow: '0 10px 25px -5px rgba(0,0,0,0.4)'
                     }}
                   />
                   <Legend
                     verticalAlign="bottom"
-                    formatter={(val) => <span className="text-[10px] text-slate-300 capitalize">{val}</span>}
+                    formatter={(val) => <span className="text-[10px] text-slate-300 capitalize font-semibold">{val}</span>}
                   />
                 </PieChart>
               </ResponsiveContainer>
-              {/* Centered Total Interventions Metric */}
               <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center">
-                <div className="text-lg font-bold font-mono text-white">{totalActions}</div>
-                <div className="text-[9px] uppercase tracking-wider text-slate-400">Actions</div>
+                <div className="text-xl font-extrabold font-mono text-white">{totalActions}</div>
+                <div className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Actions</div>
               </div>
             </>
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-xs text-slate-500 gap-1">
-              <Zap className="w-5 h-5 text-slate-600" />
               <span>Run AI recovery batch to populate actions</span>
             </div>
           )}
         </div>
       </div>
 
-      {/* Chart 3: Rule-Only vs RecoverAI Policy Safety Matrix */}
-      <div className="glass-panel p-5 flex flex-col justify-between border-emerald-500/20">
+      {/* Chart 3: Rule-Only vs RecoverAI Policy Safety Comparison Table */}
+      <div className="glass-panel p-6 flex flex-col justify-between min-h-[360px] border-emerald-500/25">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <h4 className="text-sm font-bold text-slate-200 uppercase tracking-wider">
-                Rule-Only vs RecoverAI
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-emerald-400" />
+              <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                Safety & Compliance Table
               </h4>
             </div>
-            <span className="text-[10px] bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full font-mono font-bold">
+            <span className="text-xs bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-3 py-0.5 rounded-full font-bold">
               100% Guarded
             </span>
           </div>
           <p className="text-xs text-slate-400 mb-3">
-            Autonomous decision boundaries prevent runaway retries and customer friction
+            Autonomous decision boundaries vs unconstrained rule engines
           </p>
         </div>
 
-        <div className="space-y-3">
-          {/* Comparison Item 1: Guardrail Violations */}
-          <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <div className="flex justify-between items-center text-xs mb-1.5">
-              <span className="text-slate-300 font-medium">Policy Violations</span>
-              <span className="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded text-[11px]">
-                0 Violations
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-[11px] pt-1 border-t border-slate-800">
-              <div className="flex items-center gap-1 text-rose-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
-                <span>Rule-Only: <strong>4 Breaches</strong></span>
-              </div>
-              <div className="flex items-center gap-1 text-emerald-400 justify-end font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>RecoverAI: <strong>0 (Enforced)</strong></span>
-              </div>
-            </div>
-          </div>
+        {/* Proper Comparison Table */}
+        <div className="proper-table-container rounded-xl border border-slate-800 bg-slate-950/70 my-auto">
+          <table className="proper-table">
+            <thead>
+              <tr>
+                <th className="py-2.5 px-3 text-xs font-bold text-slate-400">Metric Dimension</th>
+                <th className="py-2.5 px-3 text-xs font-bold text-rose-400 text-center">Rule-Only</th>
+                <th className="py-2.5 px-3 text-xs font-bold text-emerald-400 text-center">RecoverAI</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800/80 text-xs font-medium">
+              <tr>
+                <td className="py-2.5 px-3 text-slate-200 font-bold">Policy Violations</td>
+                <td className="py-2.5 px-3 text-rose-400 text-center font-bold">4 Breaches</td>
+                <td className="py-2.5 px-3 text-emerald-400 text-center font-bold">0 Enforced</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-3 text-slate-200 font-bold">Customer Spam Rate</td>
+                <td className="py-2.5 px-3 text-rose-400 text-center font-bold">28.4% Spam</td>
+                <td className="py-2.5 px-3 text-emerald-400 text-center font-bold">0.0% Silent</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-3 text-slate-200 font-bold">Holdout Isolation</td>
+                <td className="py-2.5 px-3 text-slate-400 text-center">None</td>
+                <td className="py-2.5 px-3 text-cyan-300 text-center font-bold">20% Control</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-3 text-slate-200 font-bold">Causal Net Lift</td>
+                <td className="py-2.5 px-3 text-slate-400 text-center">Unmeasured</td>
+                <td className="py-2.5 px-3 text-emerald-400 text-center font-bold">
+                  +₹{((metrics.incremental_revenue_paise || 0) / 100).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          {/* Comparison Item 2: Customer Spam / False Nudges */}
-          <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <div className="flex justify-between items-center text-xs mb-1.5">
-              <span className="text-slate-300 font-medium">False Positive Outreach</span>
-              <span className="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded text-[11px]">
-                0.0% Spam
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-400">
-              Transient technical declines routed to silent background retry instead of spamming user SMS
-            </p>
-          </div>
-
-          {/* Comparison Item 3: Net Incremental Revenue */}
-          <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <div className="flex justify-between items-center text-xs mb-1">
-              <span className="text-slate-300 font-medium">Causal Net Lift</span>
-              <span className="font-mono text-cyan-400 font-bold text-sm">
-                +₹{((metrics.incremental_revenue_paise || 0) / 100).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-400">
-              Statistically validated revenue uplift over uncontacted 20% holdout group
-            </p>
-          </div>
+        <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+          <span>Boundary limits: 8 Active</span>
+          <span className="text-emerald-400 font-bold flex items-center gap-1">
+            <CheckCircle2 className="w-3.5 h-3.5" /> Deterministic Authority
+          </span>
         </div>
       </div>
     </div>

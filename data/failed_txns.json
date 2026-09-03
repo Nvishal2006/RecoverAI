@@ -8,7 +8,7 @@
     "customer_tier": "vip",
     "retry_count": 1,
     "is_holdout": false,
-    "status": "FAILED",
+    "status": "MANUAL_REVIEW",
     "recovered_amount_paise": 0,
     "action_taken": "RETRY_PAYMENT",
     "ai_confidence": 0.94,
@@ -143,11 +143,11 @@
     "customer_tier": "standard",
     "retry_count": 2,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "FAILED",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "SEND_NUDGE",
     "ai_confidence": 0.89,
-    "policy_decision": "MANUAL_REVIEW"
+    "policy_decision": "APPROVED"
   },
   {
     "txn_id": "TXN_0011",
@@ -458,9 +458,9 @@
     "customer_tier": "standard",
     "retry_count": 1,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
-    "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "status": "RECOVERED",
+    "recovered_amount_paise": 999900,
+    "action_taken": "RETRY_PAYMENT",
     "ai_confidence": 0.88,
     "policy_decision": "MANUAL_REVIEW"
   },
@@ -563,9 +563,9 @@
     "customer_tier": "standard",
     "retry_count": 2,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "REJECTED_MANUAL",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "NO_ACTION",
     "ai_confidence": 0.87,
     "policy_decision": "MANUAL_REVIEW"
   },
@@ -578,11 +578,11 @@
     "customer_tier": "vip",
     "retry_count": 1,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "FAILED",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "SEND_NUDGE",
     "ai_confidence": 0.89,
-    "policy_decision": "MANUAL_REVIEW"
+    "policy_decision": "APPROVED"
   },
   {
     "txn_id": "TXN_0040",
@@ -818,11 +818,11 @@
     "customer_tier": "standard",
     "retry_count": 3,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "FAILED",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "RETRY_PAYMENT",
     "ai_confidence": 0.94,
-    "policy_decision": "MANUAL_REVIEW"
+    "policy_decision": "APPROVED"
   },
   {
     "txn_id": "TXN_0056",
@@ -968,11 +968,11 @@
     "customer_tier": "standard",
     "retry_count": 2,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "FAILED",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "SEND_NUDGE",
     "ai_confidence": 0.88,
-    "policy_decision": "MANUAL_REVIEW"
+    "policy_decision": "APPROVED"
   },
   {
     "txn_id": "TXN_0066",
@@ -1463,11 +1463,11 @@
     "customer_tier": "standard",
     "retry_count": 1,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "FAILED",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "RETRY_PAYMENT",
     "ai_confidence": 0.94,
-    "policy_decision": "MANUAL_REVIEW"
+    "policy_decision": "APPROVED"
   },
   {
     "txn_id": "TXN_0099",
@@ -1493,10 +1493,10 @@
     "customer_tier": "standard",
     "retry_count": 3,
     "is_holdout": false,
-    "status": "MANUAL_REVIEW",
+    "status": "FAILED",
     "recovered_amount_paise": 0,
-    "action_taken": "MANUAL_REVIEW",
+    "action_taken": "RETRY_PAYMENT",
     "ai_confidence": 0.94,
-    "policy_decision": "MANUAL_REVIEW"
+    "policy_decision": "APPROVED"
   }
 ]

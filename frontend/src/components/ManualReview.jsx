@@ -62,17 +62,17 @@ export default function ManualReview({
   };
 
   return (
-    <div className="glass-panel p-6 mb-6">
+    <div className="glass-panel p-2.5 mb-2">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-2">
         <div>
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-400" />
-            <h3 className="text-base font-bold text-white uppercase tracking-wider">
+          <div className="flex items-center gap-2">
+            <AlertTriangle className="w-4 h-4 text-amber-400" />
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
               Human-in-the-Loop Manual Review Queue Table
             </h3>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-[11px] text-slate-400">
             Operator triage for transactions exceeding deterministic risk limits, model confidence floors, or timeout fallbacks
           </p>
         </div>

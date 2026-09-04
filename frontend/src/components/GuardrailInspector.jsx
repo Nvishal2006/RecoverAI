@@ -120,54 +120,54 @@ export default function GuardrailInspector({ metrics = {} }) {
   );
 
   return (
-    <div className="glass-panel p-6 mb-6">
+    <div className="glass-panel p-2.5 mb-2">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-1.5 mb-2">
         <div>
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-emerald-400" />
-            <h3 className="text-base font-bold text-white uppercase tracking-wider">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
               Deterministic Guardrails & Policy Matrix Table
             </h3>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-[11px] text-slate-400">
             Strict safety boundaries enforced by the Bounded Action Engine. Gemini has Advisory authority only.
           </p>
         </div>
 
         {/* Global Compliance Badge & View Toggle */}
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
             <span className="pulse-live"></span>
-            <span className="text-xs font-bold tracking-tight">8 of 8 Guardrails Active</span>
+            <span className="text-[11px] font-bold tracking-tight">8 of 8 Guardrails Active</span>
           </div>
-          <div className="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 font-bold">
+          <div className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[11px] text-slate-300 font-bold">
             0 Violations
           </div>
 
           {/* View Mode Toggle */}
-          <div className="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs font-bold">
+          <div className="flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-800 text-[11px] font-bold">
             <button
               onClick={() => setViewMode('table')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-lg transition-all cursor-pointer ${
+              className={`flex items-center gap-1 px-2.5 py-0.5 rounded-md transition-all cursor-pointer ${
                 viewMode === 'table'
                   ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <TableIcon className="w-3.5 h-3.5" />
-              <span>Table View</span>
+              <TableIcon className="w-3 h-3" />
+              <span>Table</span>
             </button>
             <button
               onClick={() => setViewMode('grid')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-lg transition-all cursor-pointer ${
+              className={`flex items-center gap-1 px-2.5 py-0.5 rounded-md transition-all cursor-pointer ${
                 viewMode === 'grid'
                   ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <LayoutGrid className="w-3.5 h-3.5" />
-              <span>Cards View</span>
+              <LayoutGrid className="w-3 h-3" />
+              <span>Cards</span>
             </button>
           </div>
         </div>

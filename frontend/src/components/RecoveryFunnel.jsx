@@ -88,28 +88,28 @@ export default function RecoveryFunnel({ funnel = {}, selectedStage, onSelectSta
   ];
 
   return (
-    <div className="glass-panel p-6 mb-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+    <div className="glass-panel p-2.5 mb-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-2">
         <div>
-          <div className="flex items-center gap-2">
-            <h3 className="text-sm font-bold text-white tracking-wide uppercase">
+          <div className="flex items-center gap-1.5">
+            <h3 className="text-xs font-bold text-white tracking-wide uppercase">
               Autonomous Recovery Pipeline Funnel
             </h3>
             <span className="pulse-live"></span>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-[10px] text-slate-400">
             Stage-by-stage lifecycle progression from payment failure ingestion to settled revenue or human escalation
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[11px] font-mono bg-slate-900 px-3 py-1 rounded-lg text-slate-300 border border-slate-700 font-medium">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[10px] font-mono bg-slate-900 px-2 py-0.5 rounded-lg text-slate-300 border border-slate-700 font-medium">
             80 Active Cohort / 20 Isolated Holdout Control
           </span>
         </div>
       </div>
 
       {/* Connected Funnel Pipeline Steps with Equal Height */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 relative">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 relative">
         {steps.map((step, idx) => {
           const pctOfTotal = total > 0 ? Math.round((step.count / total) * 100) : 0;
           const prevStep = idx > 0 && idx < 5 ? steps[idx - 1] : null;

@@ -147,35 +147,35 @@ export default function LiveAgentCenter({
   });
 
   return (
-    <div className="space-y-6 mb-8">
+    <div className="space-y-2 mb-2">
       {/* 1. AGENT IDENTITY & LIVE COMMAND HERO */}
-      <div className="glass-panel-elevated p-6 sm:p-7 relative overflow-hidden border border-slate-700/80 shadow-2xl">
+      <div className="glass-panel-elevated p-3 sm:p-4 relative overflow-hidden border border-slate-700/80 shadow-md">
         {/* Glow ambient backgrounds */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-6 pb-6 border-b border-white/[0.08]">
+        <div className="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-2 pb-2.5 border-b border-white/[0.08]">
           {/* Left Title & Status */}
-          <div className="space-y-2 max-w-2xl">
-            <div className="flex items-center gap-3 flex-wrap">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 flex items-center justify-center shadow-lg shadow-emerald-500/25">
-                <Cpu className="w-6 h-6 text-slate-950 stroke-[2.5]" />
+          <div className="space-y-1 max-w-2xl">
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 flex items-center justify-center shadow-md shadow-emerald-500/25">
+                <Cpu className="w-4 h-4 text-slate-950 stroke-[2.5]" />
               </div>
               <div>
-                <div className="flex items-center gap-3 flex-wrap">
-                  <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h2 className="text-base sm:text-lg font-black tracking-tight text-white">
                     Autonomous Revenue Recovery Agent
                   </h2>
-                  <div className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2 border shadow-sm ${
+                  <div className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold flex items-center gap-1.5 border shadow-sm ${
                     isLiveRunning || isProcessingBatch
                       ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 animate-pulse'
                       : 'bg-slate-900/90 text-emerald-400 border-slate-700'
                   }`}>
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                     <span>{isLiveRunning ? 'AGENT ACTIVE: EXECUTING TRACE' : isProcessingBatch ? 'AGENT ACTIVE: BATCH RECOVERY' : 'AGENT WORKING: MONITORING GATEWAY'}</span>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                <p className="text-[11px] text-slate-300 mt-0.5 leading-tight">
                   Deterministic Financial Agent • Powered by Gemini 1.5 Advisory & 8 Hardened Policy Guardrails
                 </p>
               </div>
@@ -183,46 +183,46 @@ export default function LiveAgentCenter({
           </div>
 
           {/* Quick Stats Pill Deck */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 xl:w-auto w-full">
-            <div className="p-2.5 px-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-              <div className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Total Actions</div>
-              <div className="text-lg font-black text-white font-mono mt-0.5">{auditLogs.length}</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 xl:w-auto w-full">
+            <div className="p-1.5 px-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center">
+              <div className="text-[9px] text-slate-400 uppercase font-bold tracking-wider">Total Actions</div>
+              <div className="text-sm font-black text-white font-mono">{auditLogs.length}</div>
             </div>
-            <div className="p-2.5 px-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-              <div className="text-[10px] text-emerald-400 uppercase font-bold tracking-wider">Recovered</div>
-              <div className="text-lg font-black text-emerald-400 font-mono mt-0.5">
+            <div className="p-1.5 px-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center">
+              <div className="text-[9px] text-emerald-400 uppercase font-bold tracking-wider">Recovered</div>
+              <div className="text-sm font-black text-emerald-400 font-mono">
                 ₹{((metrics.ai_recovered_revenue_paise || 0) / 100).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
               </div>
             </div>
-            <div className="p-2.5 px-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-              <div className="text-[10px] text-violet-400 uppercase font-bold tracking-wider">AI Accuracy</div>
-              <div className="text-lg font-black text-violet-300 font-mono mt-0.5">
+            <div className="p-1.5 px-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center">
+              <div className="text-[9px] text-violet-400 uppercase font-bold tracking-wider">AI Accuracy</div>
+              <div className="text-sm font-black text-violet-300 font-mono">
                 {((metrics.ai_recovery_rate || 0.55) * 100).toFixed(0)}%
               </div>
             </div>
-            <div className="p-2.5 px-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-              <div className="text-[10px] text-cyan-400 uppercase font-bold tracking-wider">Safety Score</div>
-              <div className="text-lg font-black text-cyan-400 font-mono mt-0.5">100% (0 Violations)</div>
+            <div className="p-1.5 px-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center">
+              <div className="text-[9px] text-cyan-400 uppercase font-bold tracking-wider">Safety Score</div>
+              <div className="text-sm font-black text-cyan-400 font-mono">100% (0 Violations)</div>
             </div>
           </div>
         </div>
 
         {/* 2. AGENT ROLE BREAKDOWN: What does the agent actually do? */}
-        <div className="pt-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
+        <div className="pt-2.5">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
             <div>
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-violet-400" />
+              <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-violet-400" />
                 What is the Agent's Role & How Does It Work?
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-[11px] text-slate-400">
                 The agent acts as an autonomous tier-1 revenue engineer for payment operations.
               </p>
             </div>
-            <div className="flex items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs">
+            <div className="flex items-center gap-1 bg-slate-900/90 p-0.5 rounded-lg border border-slate-800 text-[11px]">
               <button
                 onClick={() => setActiveRoleTab('overview')}
-                className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                className={`px-2.5 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
                   activeRoleTab === 'overview' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -230,7 +230,7 @@ export default function LiveAgentCenter({
               </button>
               <button
                 onClick={() => setActiveRoleTab('actions')}
-                className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                className={`px-2.5 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
                   activeRoleTab === 'actions' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -384,27 +384,27 @@ export default function LiveAgentCenter({
       </div>
 
       {/* 3. INTERACTIVE "WATCH AGENT WORK LIVE" RUNNER */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
         {/* Left: Step-by-Step Live Stage Visualizer */}
-        <div className="lg:col-span-7 glass-panel p-6 space-y-5 border border-slate-800">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+        <div className="lg:col-span-7 glass-panel p-3 space-y-2 border border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-1.5 border-b border-slate-800">
             <div>
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                <Play className="w-4 h-4 text-emerald-400 fill-current" />
+              <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <Play className="w-3.5 h-3.5 text-emerald-400 fill-current" />
                 Live Agent Visual Execution Engine
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-[11px] text-slate-400">
                 Select any transaction to watch the agent analyze, check guardrails, and execute live.
               </p>
             </div>
 
             {/* Transaction Selector */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <select
                 value={selectedTxnId}
                 onChange={(e) => setSelectedTxnId(e.target.value)}
                 disabled={isLiveRunning}
-                className="bg-slate-900 border border-slate-700 text-xs text-white rounded-xl px-3 py-1.5 focus:outline-none focus:border-emerald-500 font-mono"
+                className="bg-slate-900 border border-slate-700 text-[11px] text-white rounded-lg px-2 py-1 focus:outline-none focus:border-emerald-500 font-mono"
               >
                 {transactions.slice(0, 20).map(t => (
                   <option key={t.txn_id} value={t.txn_id}>
@@ -416,155 +416,155 @@ export default function LiveAgentCenter({
               <button
                 onClick={() => handleWatchAgentWork(selectedTxnId)}
                 disabled={isLiveRunning || !selectedTxnId}
-                className="shimmer-button px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 text-xs font-black flex items-center gap-1.5 shadow-md shadow-emerald-500/20 disabled:opacity-50 cursor-pointer whitespace-nowrap"
+                className="shimmer-button px-2.5 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 text-xs font-black flex items-center gap-1 shadow-md shadow-emerald-500/20 disabled:opacity-50 cursor-pointer whitespace-nowrap"
               >
                 <Play className="w-3 h-3 fill-current" />
-                <span>{isLiveRunning ? 'Agent Working...' : '▶ Watch Agent Work'}</span>
+                <span>{isLiveRunning ? 'Working...' : '▶ Watch Agent'}</span>
               </button>
             </div>
           </div>
 
           {/* Interactive 5-Step Pipeline Animation */}
-          <div className="space-y-3">
+          <div className="space-y-1.5">
             {/* Step 1: Telemetry Ingestion */}
-            <div className={`p-3.5 rounded-xl border transition-all flex items-center justify-between ${
+            <div className={`p-2 rounded-lg border transition-all flex items-center justify-between ${
               currentStep === 1
-                ? 'bg-cyan-500/15 border-cyan-400 shadow-lg shadow-cyan-500/10'
+                ? 'bg-cyan-500/15 border-cyan-400 shadow-md shadow-cyan-500/10'
                 : currentStep > 1
                 ? 'bg-slate-900/60 border-slate-800/80 text-slate-300'
                 : 'bg-slate-900/30 border-slate-800/50 text-slate-500'
             }`}>
-              <div className="flex items-center gap-3">
-                <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
+              <div className="flex items-center gap-2">
+                <div className={`w-5 h-5 rounded flex items-center justify-center font-bold text-[10px] ${
                   currentStep === 1 ? 'bg-cyan-400 text-slate-950 animate-pulse' : currentStep > 1 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-500'
                 }`}>
-                  {currentStep > 1 ? <Check className="w-4 h-4 stroke-[3]" /> : '1'}
+                  {currentStep > 1 ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : '1'}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white flex items-center gap-2">
-                    <span>1. Telemetry Ingestion & Feature Extraction</span>
+                  <div className="text-[11px] font-bold text-white flex items-center gap-1.5">
+                    <span>1. Telemetry Ingestion & Extraction</span>
                     {currentStep === 1 && <span className="pulse-live"></span>}
                   </div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">
-                    Extracts gateway failure code, customer retry history, and transaction value.
+                  <div className="text-[10px] text-slate-400">
+                    Extracts gateway failure code, retry history, and value.
                   </div>
                 </div>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-300">
                 {currentStep === 1 ? 'INGESTING...' : currentStep > 1 ? 'CAPTURED' : 'PENDING'}
               </span>
             </div>
 
             {/* Step 2: Gemini AI Diagnosis */}
-            <div className={`p-3.5 rounded-xl border transition-all flex items-center justify-between ${
+            <div className={`p-2 rounded-lg border transition-all flex items-center justify-between ${
               currentStep === 2
-                ? 'bg-violet-500/15 border-violet-400 shadow-lg shadow-violet-500/10'
+                ? 'bg-violet-500/15 border-violet-400 shadow-md shadow-violet-500/10'
                 : currentStep > 2
                 ? 'bg-slate-900/60 border-slate-800/80 text-slate-300'
                 : 'bg-slate-900/30 border-slate-800/50 text-slate-500'
             }`}>
-              <div className="flex items-center gap-3">
-                <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
+              <div className="flex items-center gap-2">
+                <div className={`w-5 h-5 rounded flex items-center justify-center font-bold text-[10px] ${
                   currentStep === 2 ? 'bg-violet-400 text-slate-950 animate-pulse' : currentStep > 2 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-500'
                 }`}>
-                  {currentStep > 2 ? <Check className="w-4 h-4 stroke-[3]" /> : '2'}
+                  {currentStep > 2 ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : '2'}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white flex items-center gap-2">
+                  <div className="text-[11px] font-bold text-white flex items-center gap-1.5">
                     <span>2. Gemini 1.5 Root-Cause Diagnosis</span>
                     {currentStep === 2 && <span className="pulse-live"></span>}
                   </div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">
-                    Evaluates likelihood of success; proposes action strategy with confidence score.
+                  <div className="text-[10px] text-slate-400">
+                    Calculates success likelihood & proposes action with confidence.
                   </div>
                 </div>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-300">
                 {currentStep === 2 ? 'DIAGNOSING...' : currentStep > 2 ? 'RECOMMENDED' : 'PENDING'}
               </span>
             </div>
 
             {/* Step 3: Guardrail Enforcement */}
-            <div className={`p-3.5 rounded-xl border transition-all flex items-center justify-between ${
+            <div className={`p-2 rounded-lg border transition-all flex items-center justify-between ${
               currentStep === 3
-                ? 'bg-emerald-500/15 border-emerald-400 shadow-lg shadow-emerald-500/10'
+                ? 'bg-emerald-500/15 border-emerald-400 shadow-md shadow-emerald-500/10'
                 : currentStep > 3
                 ? 'bg-slate-900/60 border-slate-800/80 text-slate-300'
                 : 'bg-slate-900/30 border-slate-800/50 text-slate-500'
             }`}>
-              <div className="flex items-center gap-3">
-                <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
+              <div className="flex items-center gap-2">
+                <div className={`w-5 h-5 rounded flex items-center justify-center font-bold text-[10px] ${
                   currentStep === 3 ? 'bg-emerald-400 text-slate-950 animate-pulse' : currentStep > 3 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-500'
                 }`}>
-                  {currentStep > 3 ? <Check className="w-4 h-4 stroke-[3]" /> : '3'}
+                  {currentStep > 3 ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : '3'}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white flex items-center gap-2">
-                    <span>3. Deterministic Policy Guardrails (Authoritative)</span>
+                  <div className="text-[11px] font-bold text-white flex items-center gap-1.5">
+                    <span>3. Deterministic Policy Guardrails</span>
                     {currentStep === 3 && <span className="pulse-live"></span>}
                   </div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">
-                    Validates Holdout Isolation, Amount Limit (&lt;₹50k), Retry/Nudge caps, and Idempotency.
+                  <div className="text-[10px] text-slate-400">
+                    Validates Holdout Isolation, Amount Limit, Customer caps & Idempotency.
                   </div>
                 </div>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-300">
                 {currentStep === 3 ? 'ENFORCING...' : currentStep > 3 ? 'VERIFIED' : 'PENDING'}
               </span>
             </div>
 
             {/* Step 4: Autonomous Execution */}
-            <div className={`p-3.5 rounded-xl border transition-all flex items-center justify-between ${
+            <div className={`p-2 rounded-lg border transition-all flex items-center justify-between ${
               currentStep === 4
-                ? 'bg-amber-500/15 border-amber-400 shadow-lg shadow-amber-500/10'
+                ? 'bg-amber-500/15 border-amber-400 shadow-md shadow-amber-500/10'
                 : currentStep > 4
                 ? 'bg-slate-900/60 border-slate-800/80 text-slate-300'
                 : 'bg-slate-900/30 border-slate-800/50 text-slate-500'
             }`}>
-              <div className="flex items-center gap-3">
-                <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
+              <div className="flex items-center gap-2">
+                <div className={`w-5 h-5 rounded flex items-center justify-center font-bold text-[10px] ${
                   currentStep === 4 ? 'bg-amber-400 text-slate-950 animate-pulse' : currentStep > 4 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-500'
                 }`}>
-                  {currentStep > 4 ? <Check className="w-4 h-4 stroke-[3]" /> : '4'}
+                  {currentStep > 4 ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : '4'}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white flex items-center gap-2">
+                  <div className="text-[11px] font-bold text-white flex items-center gap-1.5">
                     <span>4. Gateway Execution (Razorpay / Simulator)</span>
                     {currentStep === 4 && <span className="pulse-live"></span>}
                   </div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">
-                    Executes retry with exponential backoff (1s, 2s), link generation, or escalation.
+                  <div className="text-[10px] text-slate-400">
+                    Executes retry with exponential backoff (1s, 2s) or payment link.
                   </div>
                 </div>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-300">
                 {currentStep === 4 ? 'DISPATCHING...' : currentStep > 4 ? 'EXECUTED' : 'PENDING'}
               </span>
             </div>
 
             {/* Step 5: Immutable Audit */}
-            <div className={`p-3.5 rounded-xl border transition-all flex items-center justify-between ${
+            <div className={`p-2 rounded-lg border transition-all flex items-center justify-between ${
               currentStep === 5
-                ? 'bg-emerald-500/20 border-emerald-400 shadow-lg shadow-emerald-500/10'
+                ? 'bg-emerald-500/20 border-emerald-400 shadow-md shadow-emerald-500/10'
                 : 'bg-slate-900/30 border-slate-800/50 text-slate-500'
             }`}>
-              <div className="flex items-center gap-3">
-                <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
+              <div className="flex items-center gap-2">
+                <div className={`w-5 h-5 rounded flex items-center justify-center font-bold text-[10px] ${
                   currentStep === 5 ? 'bg-emerald-400 text-slate-950' : 'bg-slate-800 text-slate-500'
                 }`}>
-                  {currentStep === 5 ? <Check className="w-4 h-4 stroke-[3]" /> : '5'}
+                  {currentStep === 5 ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : '5'}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-white flex items-center gap-2">
+                  <div className="text-[11px] font-bold text-white flex items-center gap-1.5">
                     <span>5. Cryptographic State & Audit Commit</span>
-                    {currentStep === 5 && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
+                    {currentStep === 5 && <CheckCircle2 className="w-3 h-3 text-emerald-400" />}
                   </div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">
-                    Pre/post-execution records sealed with idempotency key in audit ledger.
+                  <div className="text-[10px] text-slate-400">
+                    Pre/post-execution records sealed with idempotency key.
                   </div>
                 </div>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-300">
                 {currentStep === 5 ? 'COMMITTED' : 'PENDING'}
               </span>
             </div>
@@ -572,14 +572,14 @@ export default function LiveAgentCenter({
         </div>
 
         {/* Right: Live Agent Terminal & Action Telemetry */}
-        <div className="lg:col-span-5 glass-panel p-6 space-y-4 border border-slate-800 flex flex-col justify-between">
+        <div className="lg:col-span-5 glass-panel p-3 space-y-2 border border-slate-800 flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <div className="flex items-center gap-2 text-xs font-bold text-white">
-                <Terminal className="w-4 h-4 text-emerald-400" />
+            <div className="flex items-center justify-between pb-1.5 border-b border-slate-800">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-white">
+                <Terminal className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Live Agent Execution Console</span>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-slate-800">
+              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-900 text-emerald-400 border border-slate-800">
                 STDOUT STREAM
               </span>
             </div>
@@ -587,17 +587,17 @@ export default function LiveAgentCenter({
             {/* Terminal Window */}
             <div
               ref={terminalRef}
-              className="mt-3 bg-slate-950/90 rounded-xl p-3 font-mono text-[11px] h-64 overflow-y-auto space-y-1.5 border border-slate-800 shadow-inner"
+              className="mt-1.5 bg-slate-950/90 rounded-lg p-2 font-mono text-[10px] h-48 overflow-y-auto space-y-1 border border-slate-800 shadow-inner"
             >
               {liveLogLines.length === 0 ? (
-                <div className="h-full flex flex-col items-center justify-center text-slate-500 space-y-2 py-8 text-center">
-                  <Terminal className="w-6 h-6 text-slate-600" />
+                <div className="h-full flex flex-col items-center justify-center text-slate-500 space-y-1 py-4 text-center">
+                  <Terminal className="w-5 h-5 text-slate-600" />
                   <p>Agent daemon active & listening for payment failure events.</p>
-                  <p className="text-[10px] text-slate-600">Click "▶ Watch Agent Work" above to trigger interactive execution.</p>
+                  <p className="text-[9px] text-slate-600">Click "▶ Watch Agent" above to trigger interactive execution.</p>
                 </div>
               ) : (
                 liveLogLines.map((line, idx) => (
-                  <div key={idx} className="leading-relaxed flex items-start gap-2">
+                  <div key={idx} className="leading-tight flex items-start gap-1.5">
                     <span className="text-slate-600 select-none">{line.time}</span>
                     <span className={
                       line.type === 'ai' ? 'text-violet-300' :
@@ -617,20 +617,20 @@ export default function LiveAgentCenter({
 
           {/* Post-execution Result Card */}
           {liveResult && (
-            <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-xs space-y-2">
+            <div className="p-2.5 rounded-lg bg-emerald-950/30 border border-emerald-500/40 text-xs space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-emerald-300 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Agent Execution Verdict: {liveResult.status || 'COMPLETED'}
+                <span className="font-bold text-emerald-300 flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  Verdict: {liveResult.status || 'COMPLETED'}
                 </span>
                 <button
                   onClick={() => onViewTrace(liveResult.txn?.txn_id || selectedTxnId)}
                   className="text-[10px] text-emerald-400 underline font-bold cursor-pointer"
                 >
-                  View Full Audit Trace →
+                  View Trace →
                 </button>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-[11px]">
+              <div className="grid grid-cols-2 gap-1.5 text-[10px]">
                 <div>
                   <span className="text-slate-400">Action: </span>
                   <span className="font-mono font-bold text-white">{liveResult.policy_result?.final_action || liveResult.recommendation?.recommended_action || 'RETRY_PAYMENT'}</span>
@@ -646,30 +646,27 @@ export default function LiveAgentCenter({
       </div>
 
       {/* 4. LIVE ACTION STREAM & TICKER */}
-      <div className="glass-panel p-6 space-y-4 border border-slate-800">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+      <div className="glass-panel p-3 space-y-2 border border-slate-800">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-1.5 border-b border-slate-800">
           <div>
-            <div className="flex items-center gap-2.5">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                <Layers className="w-4 h-4 text-cyan-400" />
+            <div className="flex items-center gap-2">
+              <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-cyan-400" />
                 Live Agent Action Feed & Event Stream
               </h3>
-              <span className="badge badge-recovered text-[10px]">
-                {filteredLogs.length} Events Logged
+              <span className="badge badge-recovered text-[9px]">
+                {filteredLogs.length} Events
               </span>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Chronological log of every action executed by the agent across the payment cohort.
-            </p>
           </div>
 
           {/* Action Type Filter Buttons */}
-          <div className="flex items-center gap-1.5 overflow-x-auto py-1">
+          <div className="flex items-center gap-1 overflow-x-auto py-0.5">
             {['ALL', 'RETRY_PAYMENT', 'SEND_NUDGE', 'SCHEDULE_MANDATE_RETRY', 'MANUAL_REVIEW', 'NO_ACTION'].map((action) => (
               <button
                 key={action}
                 onClick={() => setActiveActionFilter(action)}
-                className={`px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer transition-all whitespace-nowrap ${
+                className={`px-2 py-0.5 rounded-md text-[10px] font-bold cursor-pointer transition-all whitespace-nowrap ${
                   activeActionFilter === action
                     ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                     : 'text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800'
@@ -683,35 +680,35 @@ export default function LiveAgentCenter({
 
         {/* Live Stream Table */}
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full text-left text-[11px]">
             <thead>
-              <tr className="border-b border-slate-800/80 text-slate-400 font-bold uppercase tracking-wider text-[10px]">
-                <th className="py-2.5 px-3">Timestamp</th>
-                <th className="py-2.5 px-3">Transaction</th>
-                <th className="py-2.5 px-3">Diagnosed Cause</th>
-                <th className="py-2.5 px-3">Action Executed</th>
-                <th className="py-2.5 px-3">AI Confidence</th>
-                <th className="py-2.5 px-3">Policy Verdict</th>
-                <th className="py-2.5 px-3">Outcome Status</th>
-                <th className="py-2.5 px-3 text-right">Trace</th>
+              <tr className="border-b border-slate-800/80 text-slate-400 font-bold uppercase tracking-wider text-[9px]">
+                <th className="py-1 px-2">Timestamp</th>
+                <th className="py-1 px-2">Transaction</th>
+                <th className="py-1 px-2">Diagnosed Cause</th>
+                <th className="py-1 px-2">Action Executed</th>
+                <th className="py-1 px-2">AI Conf.</th>
+                <th className="py-1 px-2">Policy</th>
+                <th className="py-1 px-2">Outcome</th>
+                <th className="py-1 px-2 text-right">Trace</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/50">
               {filteredLogs.slice(-10).reverse().map((log, idx) => (
                 <tr key={log.audit_id || idx} className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-2.5 px-3 font-mono text-[11px] text-slate-400">
+                  <td className="py-1 px-2 font-mono text-[10px] text-slate-400">
                     {log.timestamp ? log.timestamp.split('T')[1]?.slice(0, 8) || log.timestamp : 'Just now'}
                   </td>
-                  <td className="py-2.5 px-3 font-mono font-bold text-white">
+                  <td className="py-1 px-2 font-mono font-bold text-white">
                     {log.txn_id}
                   </td>
-                  <td className="py-2.5 px-3 text-slate-300">
-                    <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[11px]">
+                  <td className="py-1 px-2 text-slate-300">
+                    <span className="px-1.5 py-0.2 rounded bg-slate-900 border border-slate-800 text-[10px]">
                       {log.failure_code || 'network_error'}
                     </span>
                   </td>
-                  <td className="py-2.5 px-3 font-bold">
-                    <span className={`px-2 py-0.5 rounded text-[11px] font-mono ${
+                  <td className="py-1 px-2 font-bold">
+                    <span className={`px-1.5 py-0.2 rounded text-[10px] font-mono ${
                       log.action === 'RETRY_PAYMENT' ? 'text-emerald-300 bg-emerald-500/15 border border-emerald-500/30' :
                       log.action === 'SEND_NUDGE' ? 'text-cyan-300 bg-cyan-500/15 border border-cyan-500/30' :
                       log.action === 'SCHEDULE_MANDATE_RETRY' ? 'text-violet-300 bg-violet-500/15 border border-violet-500/30' :
@@ -721,14 +718,14 @@ export default function LiveAgentCenter({
                       {log.action}
                     </span>
                   </td>
-                  <td className="py-2.5 px-3 font-mono font-bold text-violet-300">
+                  <td className="py-1 px-2 font-mono font-bold text-violet-300 text-[10px]">
                     {log.confidence ? `${(log.confidence * 100).toFixed(0)}%` : '92%'}
                   </td>
-                  <td className="py-2.5 px-3 font-mono text-emerald-400 font-bold">
+                  <td className="py-1 px-2 font-mono text-emerald-400 font-bold text-[10px]">
                     {log.policy_decision || 'APPROVED'}
                   </td>
-                  <td className="py-2.5 px-3">
-                    <span className={`badge ${
+                  <td className="py-1 px-2">
+                    <span className={`badge text-[9px] py-0.2 px-1.5 ${
                       log.status === 'SUCCESS' ? 'badge-recovered' :
                       log.status === 'FALLBACK' || log.status === 'SKIPPED' ? 'badge-holdout' :
                       'badge-pending'
@@ -736,12 +733,12 @@ export default function LiveAgentCenter({
                       {log.status}
                     </span>
                   </td>
-                  <td className="py-2.5 px-3 text-right">
+                  <td className="py-1 px-2 text-right">
                     <button
                       onClick={() => onViewTrace(log.txn_id)}
-                      className="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer text-[10px] font-bold"
+                      className="px-1.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer text-[9px] font-bold"
                     >
-                      Audit Proof
+                      Audit
                     </button>
                   </td>
                 </tr>

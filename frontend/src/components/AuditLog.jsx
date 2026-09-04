@@ -50,18 +50,18 @@ export default function AuditLog({ logs = [] }) {
   };
 
   return (
-    <div className="glass-panel p-6 mb-6">
+    <div className="glass-panel p-2.5 mb-2">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-1.5 mb-2">
         <div>
           <div className="flex items-center gap-2">
-            <Database className="w-5 h-5 text-cyan-400" />
+            <Database className="w-4 h-4 text-cyan-400" />
             <h3 className="text-sm font-bold text-white uppercase tracking-wide">
               Immutable Pre-Execution Audit Trail
             </h3>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Append-only cryptographically verifiable ledger guaranteeing PENDING_EXECUTION precedes all payment gateway dispatches
+          <p className="text-[11px] text-slate-400">
+            Append-only cryptographic ledger tracking intent before dispatch and gateway execution responses
           </p>
         </div>
 

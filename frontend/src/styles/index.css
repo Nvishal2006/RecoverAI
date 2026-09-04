@@ -7,7 +7,7 @@
 }
 
 :root {
-  --bg-main: #080c16;
+  --bg-main: #9cb8ff;
   --bg-card: rgba(15, 22, 41, 0.85);
   --bg-card-hover: rgba(22, 33, 60, 0.95);
   --bg-card-elevated: rgba(20, 30, 54, 0.9);
@@ -28,10 +28,19 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: 'Times New Roman', Times, Georgia, serif !important;
 }
+
+html {
+  font-size: 18px; /* Base font size increased by 2px (from 16px to 18px) */
+}
+
+/* Explicit +2px adjustments for fixed-pixel classes */
+.text-\[8px\] { font-size: 10px !important; }
+.text-\[9px\] { font-size: 11px !important; }
+.text-\[10px\] { font-size: 12px !important; }
+.text-\[11px\] { font-size: 13px !important; }
+.text-\[12px\] { font-size: 14px !important; }
 
 html, body, button, input, select, textarea, table, th, td, pre, code, kbd, samp, div, span, p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Times New Roman', Times, Georgia, serif !important;
@@ -87,7 +96,7 @@ body {
   gap: 5px;
   padding: 3px 9px;
   border-radius: 9999px;
-  font-size: 0.70rem;
+  font-size: 13px; /* increased by 2px from ~11px / 0.70rem */
   font-weight: 700;
   letter-spacing: 0.03em;
   white-space: nowrap;
@@ -245,7 +254,7 @@ select option {
 .proper-table thead th {
   background: rgba(15, 23, 42, 0.98);
   color: #cbd5e1;
-  font-size: 13px;
+  font-size: 15px; /* increased by 2px (from 13px) */
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -261,7 +270,7 @@ select option {
 .proper-table tbody td {
   padding: 14px 18px;
   color: #f1f5f9;
-  font-size: 14px;
+  font-size: 16px; /* increased by 2px (from 14px) */
   line-height: 1.4;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   vertical-align: middle;
@@ -306,7 +315,7 @@ select option {
   font-family: 'Times New Roman', Times, Georgia, serif !important;
   padding: 8px 14px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px; /* increased by 2px (from 13px) */
   background: #090d16;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
@@ -325,7 +334,7 @@ select option {
   font-family: 'Times New Roman', Times, Georgia, serif !important;
   padding: 6px 14px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px; /* increased by 2px (from 12px) */
   font-weight: 700;
   display: inline-flex;
   align-items: center;

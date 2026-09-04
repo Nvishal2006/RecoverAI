@@ -170,101 +170,101 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen pb-8 flex flex-col items-center bg-[#080c16] text-white">
+    <div className="min-h-screen flex flex-col items-center bg-[#9cb8ff] text-white">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl glass-panel-elevated border border-emerald-500/40 text-xs font-semibold shadow-2xl flex items-center gap-2.5">
+        <div className="fixed bottom-4 right-4 z-50 px-3 py-2 rounded-xl glass-panel-elevated border border-emerald-500/40 text-xs font-semibold shadow-2xl flex items-center gap-2">
           <span className="pulse-live"></span>
           <span>{toastMessage.msg}</span>
         </div>
       )}
 
-      {/* Top Header - Spacious Executive Navigation Header */}
-      <header className="w-full border-b border-white/[0.1] bg-[#080c16]/95 backdrop-blur-2xl sticky top-0 z-40 shadow-lg shadow-black/40">
-        <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-4.5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+      {/* Top Header - Compact Modern Navigation Header */}
+      <header className="w-full border-b border-white/[0.1] bg-[#080c16]/95 backdrop-blur-2xl sticky top-0 z-40 shadow-md shadow-black/40">
+        <div className="max-w-[1720px] mx-auto px-2 sm:px-3 py-1.5 flex flex-col xl:flex-row xl:items-center justify-between gap-2">
           
-          {/* Brand & Title Lockup with Proper Spacing */}
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 flex items-center justify-center shadow-lg shadow-emerald-500/25 shrink-0">
-              <Cpu className="w-5 h-5 text-slate-950 stroke-[2.5]" />
+          {/* Brand & Title Lockup */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 flex items-center justify-center shadow-md shadow-emerald-500/25 shrink-0">
+              <Cpu className="w-4 h-4 text-slate-950 stroke-[2.5]" />
             </div>
             <div>
-              <div className="flex items-center gap-2.5 flex-wrap">
-                <span className="text-2xl font-bold tracking-normal text-white">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-lg font-bold tracking-normal text-white">
                   RecoverAI
                 </span>
-                <span className="text-[11px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/35 px-2.5 py-0.5 rounded-full shadow-sm">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/35 px-2 py-0.2 rounded-full shadow-sm">
                   Enterprise Console
                 </span>
-                <span className="text-[11px] text-slate-300 bg-slate-900/90 px-2.5 py-0.5 rounded-full border border-slate-800 flex items-center gap-1.5 font-bold">
-                  <Server className="w-3 h-3 text-cyan-400" /> Razorpay Simulator
+                <span className="text-[10px] text-slate-300 bg-slate-900/90 px-2 py-0.2 rounded-full border border-slate-800 flex items-center gap-1 font-bold">
+                  <Server className="w-2.5 h-2.5 text-cyan-400" /> Razorpay Simulator
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-1.5 tracking-wide leading-relaxed">
+              <p className="text-[11px] text-slate-400 mt-0.5 tracking-wide leading-tight">
                 Bounded Autonomous Revenue Recovery • Advisory Gemini 1.5 • Deterministic Policy Guardrails
               </p>
             </div>
           </div>
 
           {/* Telemetry Heartbeat Status Center */}
-          <div className="hidden lg:flex items-center gap-3.5 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800/90 text-xs shadow-inner">
-            <div className="flex items-center gap-2 text-emerald-400 font-bold">
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-800/90 text-xs shadow-inner">
+            <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
               <span className="pulse-live"></span>
               <span>Gateway Connected</span>
             </div>
             <span className="text-slate-700 font-normal">|</span>
-            <div className="flex items-center gap-2 text-slate-300 font-semibold">
+            <div className="flex items-center gap-1.5 text-slate-300 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               <span>8 Guardrails Active</span>
             </div>
             <span className="text-slate-700 font-normal">|</span>
-            <div className="flex items-center gap-2 text-slate-300 font-semibold">
+            <div className="flex items-center gap-1.5 text-slate-300 font-semibold">
               <Sparkles className="w-3.5 h-3.5 text-violet-400" />
               <span>Gemini Advisory</span>
             </div>
           </div>
 
-          {/* Header Action Buttons with Generous Spacing */}
-          <div className="flex items-center gap-2.5 flex-wrap">
+          {/* Header Action Buttons */}
+          <div className="flex items-center gap-2 flex-wrap">
             <button
               onClick={handleRunDemo}
               disabled={isDemoRunning}
-              className="px-3.5 py-2 rounded-xl bg-violet-600/15 hover:bg-violet-600/25 text-violet-300 border border-violet-500/35 text-xs font-bold transition-all flex items-center gap-2 disabled:opacity-50 cursor-pointer shadow-sm"
+              className="px-2.5 py-1 rounded-lg bg-violet-600/15 hover:bg-violet-600/25 text-violet-300 border border-violet-500/35 text-xs font-bold transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer shadow-sm"
               title="Inject 504 Timeout and observe backoff & fallback"
             >
               <Play className="w-3 h-3 fill-current text-violet-400" />
-              <span>{isDemoRunning ? 'Running Demo...' : 'Chaos Demo'}</span>
+              <span>{isDemoRunning ? 'Running...' : 'Chaos Demo'}</span>
             </button>
 
             <button
               onClick={handleGenerateData}
               disabled={isGenerating}
-              className="px-3.5 py-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/80 text-xs font-bold transition-all flex items-center gap-2 disabled:opacity-50 cursor-pointer shadow-sm"
+              className="px-2.5 py-1 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/80 text-xs font-bold transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer shadow-sm"
               title="Regenerate 100 synthetic transactions with 20 holdouts"
             >
-              <RefreshCw className={`w-3.5 h-3.5 ${isGenerating ? 'animate-spin text-cyan-400' : ''}`} />
+              <RefreshCw className={`w-3 h-3 ${isGenerating ? 'animate-spin text-cyan-400' : ''}`} />
               <span>Regenerate</span>
             </button>
 
             <button
               onClick={handleBatchProcess}
               disabled={isProcessingBatch}
-              className="shimmer-button px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 text-xs font-bold tracking-wide shadow-lg shadow-emerald-500/25 transition-all flex items-center gap-2 disabled:opacity-50 cursor-pointer"
+              className="shimmer-button px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 text-xs font-bold tracking-wide shadow-md shadow-emerald-500/25 transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
               title="Run AI Recovery across all active failed transactions"
             >
-              <Zap className="w-3.5 h-3.5 fill-current" />
+              <Zap className="w-3 h-3 fill-current" />
               <span>{isProcessingBatch ? 'Executing...' : '⚡ Execute AI Recovery'}</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Main Content Container with Proper Top Spacing */}
-      <main className="max-w-[1680px] w-full px-4 sm:px-6 lg:px-8 pt-7">
+      {/* Main Content Container with zero excessive padding */}
+      <main className="w-full max-w-[1720px] px-2 sm:px-3 pt-2">
         
-        {/* Navigation Bar - Distinctly Separated Glassmorphic Navigation Tier */}
-        <nav aria-label="Main Navigation" className="bg-slate-900/80 backdrop-blur-xl border border-slate-800/90 rounded-2xl p-2 px-3 mb-8 shadow-xl shadow-black/30 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <div className="flex items-center gap-2 overflow-x-auto py-0.5">
+        {/* Navigation Bar */}
+        <nav aria-label="Main Navigation" className="bg-slate-900/80 backdrop-blur-xl border border-slate-800/90 rounded-xl p-1 px-2 mb-2 shadow-lg shadow-black/30 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <div className="flex items-center gap-1.5 overflow-x-auto py-0.5">
             <button
               onClick={() => setActiveTab('overview')}
               className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 text-xs sm:text-sm font-bold cursor-pointer whitespace-nowrap ${
@@ -362,7 +362,7 @@ export default function App() {
         </nav>
 
         {/* Visual Content Separator */}
-        <div className="mb-6">
+        <div className="mb-2">
           {/* Top KPI Metrics Cards */}
           <MetricCards metrics={metrics} />
         </div>

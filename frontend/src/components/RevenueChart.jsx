@@ -47,27 +47,27 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
   }));
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 mb-2">
       {/* Chart 1: Recovery Rate by Failure Code */}
-      <div className="glass-panel p-6 flex flex-col justify-between min-h-[360px]">
+      <div className="glass-panel p-2.5 flex flex-col justify-between min-h-[290px]">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Recovery by Failure Code
             </h4>
-            <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/25 font-bold">
+            <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.2 rounded-full border border-emerald-500/25 font-bold">
               Causal Lift
             </span>
           </div>
-          <p className="text-xs text-slate-400 mb-4">
+          <p className="text-[10px] text-slate-400 mb-2">
             Recovery percentage achieved across auth, balance, and network errors
           </p>
         </div>
 
-        <div className="h-64 w-full">
+        <div className="h-52 w-full">
           {failureData.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={failureData} margin={{ top: 10, right: 10, left: -20, bottom: 25 }}>
+              <BarChart data={failureData} margin={{ top: 5, right: 5, left: -25, bottom: 20 }}>
                 <defs>
                   <linearGradient id="emeraldBarGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#34d399" stopOpacity={0.9} />
@@ -77,7 +77,7 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
                 <XAxis
                   dataKey="name"
                   stroke="#64748b"
-                  fontSize={10}
+                  fontSize={9}
                   tickLine={false}
                   axisLine={{ stroke: '#334155' }}
                   angle={-20}
@@ -86,7 +86,7 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
                 />
                 <YAxis
                   stroke="#64748b"
-                  fontSize={10}
+                  fontSize={9}
                   tickLine={false}
                   axisLine={{ stroke: '#334155' }}
                   domain={[0, 100]}
@@ -96,8 +96,8 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
                 <Bar
                   dataKey="recoveryRate"
                   fill="url(#emeraldBarGradient)"
-                  radius={[6, 6, 0, 0]}
-                  barSize={24}
+                  radius={[4, 4, 0, 0]}
+                  barSize={20}
                 />
               </BarChart>
             </ResponsiveContainer>
@@ -110,22 +110,22 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
       </div>
 
       {/* Chart 2: Action Distribution with Center Stat */}
-      <div className="glass-panel p-6 flex flex-col justify-between min-h-[360px]">
+      <div className="glass-panel p-2.5 flex flex-col justify-between min-h-[290px]">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Autonomous Actions Dispatched
             </h4>
-            <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/25 font-bold">
+            <span className="text-[9px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.2 rounded-full border border-cyan-500/25 font-bold">
               {totalActions} Total
             </span>
           </div>
-          <p className="text-xs text-slate-400 mb-4">
+          <p className="text-[10px] text-slate-400 mb-2">
             Interventions authorized and executed by Bounded Action Engine
           </p>
         </div>
 
-        <div className="h-64 w-full relative">
+        <div className="h-52 w-full relative">
           {pieData.length > 0 ? (
             <>
               <ResponsiveContainer width="100%" height="100%">
@@ -134,8 +134,8 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
                     data={pieData}
                     cx="50%"
                     cy="45%"
-                    innerRadius={55}
-                    outerRadius={80}
+                    innerRadius={45}
+                    outerRadius={68}
                     paddingAngle={3}
                     dataKey="value"
                   >
@@ -152,21 +152,21 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
                     contentStyle={{
                       backgroundColor: '#090d16',
                       borderColor: '#334155',
-                      borderRadius: '12px',
-                      fontSize: '11px',
+                      borderRadius: '8px',
+                      fontSize: '10px',
                       color: '#f8fafc',
-                      boxShadow: '0 10px 25px -5px rgba(0,0,0,0.4)'
+                      boxShadow: '0 5px 15px -3px rgba(0,0,0,0.4)'
                     }}
                   />
                   <Legend
                     verticalAlign="bottom"
-                    formatter={(val) => <span className="text-[10px] text-slate-300 capitalize font-semibold">{val}</span>}
+                    formatter={(val) => <span className="text-[9px] text-slate-300 capitalize font-semibold">{val}</span>}
                   />
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center">
-                <div className="text-xl font-extrabold font-mono text-white">{totalActions}</div>
-                <div className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Actions</div>
+                <div className="text-lg font-extrabold font-mono text-white">{totalActions}</div>
+                <div className="text-[8px] uppercase tracking-wider text-slate-400 font-bold">Actions</div>
               </div>
             </>
           ) : (
@@ -178,54 +178,54 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
       </div>
 
       {/* Chart 3: Rule-Only vs RecoverAI Policy Safety Comparison Table */}
-      <div className="glass-panel p-6 flex flex-col justify-between min-h-[360px] border-emerald-500/25">
+      <div className="glass-panel p-2.5 flex flex-col justify-between min-h-[290px] border-emerald-500/25">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                 Safety & Compliance Table
               </h4>
             </div>
-            <span className="text-xs bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-3 py-0.5 rounded-full font-bold">
+            <span className="text-[9px] bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-2 py-0.2 rounded-full font-bold">
               100% Guarded
             </span>
           </div>
-          <p className="text-xs text-slate-400 mb-3">
+          <p className="text-[10px] text-slate-400 mb-2">
             Autonomous decision boundaries vs unconstrained rule engines
           </p>
         </div>
 
         {/* Proper Comparison Table */}
-        <div className="proper-table-container rounded-xl border border-slate-800 bg-slate-950/70 my-auto">
-          <table className="proper-table">
+        <div className="proper-table-container rounded-lg border border-slate-800 bg-slate-950/70 my-auto">
+          <table className="proper-table w-full text-[11px]">
             <thead>
               <tr>
-                <th className="py-2.5 px-3 text-xs font-bold text-slate-400">Metric Dimension</th>
-                <th className="py-2.5 px-3 text-xs font-bold text-rose-400 text-center">Rule-Only</th>
-                <th className="py-2.5 px-3 text-xs font-bold text-emerald-400 text-center">RecoverAI</th>
+                <th className="py-1 px-2 text-[10px] font-bold text-slate-400">Dimension</th>
+                <th className="py-1 px-2 text-[10px] font-bold text-rose-400 text-center">Rule-Only</th>
+                <th className="py-1 px-2 text-[10px] font-bold text-emerald-400 text-center">RecoverAI</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/80 text-xs font-medium">
+            <tbody className="divide-y divide-slate-800/80 text-[10px] font-medium">
               <tr>
-                <td className="py-2.5 px-3 text-slate-200 font-bold">Policy Violations</td>
-                <td className="py-2.5 px-3 text-rose-400 text-center font-bold">4 Breaches</td>
-                <td className="py-2.5 px-3 text-emerald-400 text-center font-bold">0 Enforced</td>
+                <td className="py-1 px-2 text-slate-200 font-bold">Policy Violations</td>
+                <td className="py-1 px-2 text-rose-400 text-center font-bold">4 Breaches</td>
+                <td className="py-1 px-2 text-emerald-400 text-center font-bold">0 Enforced</td>
               </tr>
               <tr>
-                <td className="py-2.5 px-3 text-slate-200 font-bold">Customer Spam Rate</td>
-                <td className="py-2.5 px-3 text-rose-400 text-center font-bold">28.4% Spam</td>
-                <td className="py-2.5 px-3 text-emerald-400 text-center font-bold">0.0% Silent</td>
+                <td className="py-1 px-2 text-slate-200 font-bold">Customer Spam Rate</td>
+                <td className="py-1 px-2 text-rose-400 text-center font-bold">28.4% Spam</td>
+                <td className="py-1 px-2 text-emerald-400 text-center font-bold">0.0% Silent</td>
               </tr>
               <tr>
-                <td className="py-2.5 px-3 text-slate-200 font-bold">Holdout Isolation</td>
-                <td className="py-2.5 px-3 text-slate-400 text-center">None</td>
-                <td className="py-2.5 px-3 text-cyan-300 text-center font-bold">20% Control</td>
+                <td className="py-1 px-2 text-slate-200 font-bold">Holdout Isolation</td>
+                <td className="py-1 px-2 text-slate-400 text-center">None</td>
+                <td className="py-1 px-2 text-cyan-300 text-center font-bold">20% Control</td>
               </tr>
               <tr>
-                <td className="py-2.5 px-3 text-slate-200 font-bold">Causal Net Lift</td>
-                <td className="py-2.5 px-3 text-slate-400 text-center">Unmeasured</td>
-                <td className="py-2.5 px-3 text-emerald-400 text-center font-bold">
+                <td className="py-1 px-2 text-slate-200 font-bold">Causal Net Lift</td>
+                <td className="py-1 px-2 text-slate-400 text-center">Unmeasured</td>
+                <td className="py-1 px-2 text-emerald-400 text-center font-bold">
                   +₹{((metrics.incremental_revenue_paise || 0) / 100).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
                 </td>
               </tr>
@@ -233,10 +233,10 @@ export default function RevenueChart({ metrics = {}, evaluation = {} }) {
           </table>
         </div>
 
-        <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+        <div className="pt-1.5 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400">
           <span>Boundary limits: 8 Active</span>
           <span className="text-emerald-400 font-bold flex items-center gap-1">
-            <CheckCircle2 className="w-3.5 h-3.5" /> Deterministic Authority
+            <CheckCircle2 className="w-3 h-3" /> Deterministic Authority
           </span>
         </div>
       </div>

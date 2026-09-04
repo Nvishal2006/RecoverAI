@@ -1,6 +1,6 @@
 [
   {
-    "audit_id": "AUD_045A2689",
+    "audit_id": "AUD_B46BA2CB",
     "txn_id": "TXN_TIMEOUT_SIM_001",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -13,7 +13,7 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_TIMEOUT_SIM_001:RETRY_PAYMENT",
-    "execution_id": "EXEC_07E1CFD4DF",
+    "execution_id": "EXEC_C3D7AEC3D5",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -41,10 +41,10 @@
     },
     "retry_attempts": 2,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:46:24.288324+00:00"
+    "timestamp": "2026-09-04T03:53:17.492334+00:00"
   },
   {
-    "audit_id": "AUD_8B5BF4ED",
+    "audit_id": "AUD_099D309D",
     "txn_id": "TXN_HIGHVAL_001",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -57,17 +57,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_HIGHVAL_001:MANUAL_REVIEW",
-    "execution_id": "EXEC_74150DF5B6",
+    "execution_id": "EXEC_3F0AFE6973",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:03.922149+00:00"
+    "timestamp": "2026-09-04T03:53:24.651823+00:00"
   },
   {
-    "audit_id": "AUD_21AC4324",
+    "audit_id": "AUD_3D3C3689",
     "txn_id": "TXN_BLOCKED_001",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -80,17 +80,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_BLOCKED_001:MANUAL_REVIEW",
-    "execution_id": "EXEC_331117638A",
+    "execution_id": "EXEC_F673ADA6D4",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:03.977506+00:00"
+    "timestamp": "2026-09-04T03:53:24.678833+00:00"
   },
   {
-    "audit_id": "AUD_3AACA41E",
+    "audit_id": "AUD_F1031A69",
     "txn_id": "TXN_0004",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -103,17 +103,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0004:MANUAL_REVIEW",
-    "execution_id": "EXEC_FFB13C57D4",
+    "execution_id": "EXEC_51180F7ACA",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:04.027267+00:00"
+    "timestamp": "2026-09-04T03:53:24.705069+00:00"
   },
   {
-    "audit_id": "AUD_D044047B",
+    "audit_id": "AUD_E463D21B",
     "txn_id": "TXN_0005",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -126,17 +126,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0005:MANUAL_REVIEW",
-    "execution_id": "EXEC_99A2583B30",
+    "execution_id": "EXEC_04C99802AD",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:04.074901+00:00"
+    "timestamp": "2026-09-04T03:53:24.734066+00:00"
   },
   {
-    "audit_id": "AUD_30B41217",
+    "audit_id": "AUD_6EEB79BE",
     "txn_id": "TXN_0006",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -149,17 +149,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0006:MANUAL_REVIEW",
-    "execution_id": "EXEC_7F13A65323",
+    "execution_id": "EXEC_2B36592888",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:04.126089+00:00"
+    "timestamp": "2026-09-04T03:53:24.760999+00:00"
   },
   {
-    "audit_id": "AUD_1E997853",
+    "audit_id": "AUD_F1266918",
     "txn_id": "TXN_0007",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -172,7 +172,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0007:SEND_NUDGE",
-    "execution_id": "EXEC_33706041DD",
+    "execution_id": "EXEC_EA78795FBA",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -187,10 +187,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.178635+00:00"
+    "timestamp": "2026-09-04T03:53:24.791000+00:00"
   },
   {
-    "audit_id": "AUD_3206C9F2",
+    "audit_id": "AUD_A63C0011",
     "txn_id": "TXN_0009",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -203,7 +203,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0009:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_80A2C335BC",
+    "execution_id": "EXEC_1E48CD0711",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -218,10 +218,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.221989+00:00"
+    "timestamp": "2026-09-04T03:53:24.819000+00:00"
   },
   {
-    "audit_id": "AUD_F6DB30D6",
+    "audit_id": "AUD_F5991C8D",
     "txn_id": "TXN_0010",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -234,7 +234,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0010:SEND_NUDGE",
-    "execution_id": "EXEC_9063547A06",
+    "execution_id": "EXEC_03105402CB",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -249,10 +249,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.272610+00:00"
+    "timestamp": "2026-09-04T03:53:24.845063+00:00"
   },
   {
-    "audit_id": "AUD_E342669F",
+    "audit_id": "AUD_7C7FDE25",
     "txn_id": "TXN_0011",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -265,7 +265,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0011:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_2F418FDBA4",
+    "execution_id": "EXEC_8C1E3F4999",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -280,10 +280,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.321190+00:00"
+    "timestamp": "2026-09-04T03:53:24.875056+00:00"
   },
   {
-    "audit_id": "AUD_762042B6",
+    "audit_id": "AUD_8844792B",
     "txn_id": "TXN_0013",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -296,7 +296,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0013:SEND_NUDGE",
-    "execution_id": "EXEC_C8A5566D15",
+    "execution_id": "EXEC_65502BE3C8",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -311,10 +311,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.370935+00:00"
+    "timestamp": "2026-09-04T03:53:24.906035+00:00"
   },
   {
-    "audit_id": "AUD_6F280FAE",
+    "audit_id": "AUD_466CBA39",
     "txn_id": "TXN_0014",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -327,7 +327,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0014:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_43E25785B0",
+    "execution_id": "EXEC_27DD080169",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -342,10 +342,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.427520+00:00"
+    "timestamp": "2026-09-04T03:53:24.938995+00:00"
   },
   {
-    "audit_id": "AUD_4DB1A599",
+    "audit_id": "AUD_202A06C3",
     "txn_id": "TXN_0015",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -358,7 +358,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0015:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_4A43875312",
+    "execution_id": "EXEC_0CA4550EB4",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -373,10 +373,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.488536+00:00"
+    "timestamp": "2026-09-04T03:53:24.968205+00:00"
   },
   {
-    "audit_id": "AUD_D3332ECC",
+    "audit_id": "AUD_5AFE7D42",
     "txn_id": "TXN_0021",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -389,7 +389,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0021:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_88CB171DDD",
+    "execution_id": "EXEC_7A9FC2F907",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -404,10 +404,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.539724+00:00"
+    "timestamp": "2026-09-04T03:53:25.003983+00:00"
   },
   {
-    "audit_id": "AUD_249C3079",
+    "audit_id": "AUD_BC825B2A",
     "txn_id": "TXN_0022",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -420,7 +420,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0022:SEND_NUDGE",
-    "execution_id": "EXEC_04934B448B",
+    "execution_id": "EXEC_C1CCCF0B4A",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -435,10 +435,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.595502+00:00"
+    "timestamp": "2026-09-04T03:53:25.035982+00:00"
   },
   {
-    "audit_id": "AUD_8A4B2B60",
+    "audit_id": "AUD_96EFE8DA",
     "txn_id": "TXN_0023",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -451,7 +451,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0023:SEND_NUDGE",
-    "execution_id": "EXEC_DA217AF926",
+    "execution_id": "EXEC_BE2369EDDA",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -466,10 +466,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.672194+00:00"
+    "timestamp": "2026-09-04T03:53:25.067577+00:00"
   },
   {
-    "audit_id": "AUD_2F226200",
+    "audit_id": "AUD_64731C37",
     "txn_id": "TXN_0024",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -482,7 +482,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0024:RETRY_PAYMENT",
-    "execution_id": "EXEC_7E53AC5FE1",
+    "execution_id": "EXEC_95705AEE0B",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -497,10 +497,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.732756+00:00"
+    "timestamp": "2026-09-04T03:53:25.096576+00:00"
   },
   {
-    "audit_id": "AUD_7FC0B2C2",
+    "audit_id": "AUD_6D3FA546",
     "txn_id": "TXN_0025",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -513,7 +513,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0025:SEND_NUDGE",
-    "execution_id": "EXEC_8BEF15F974",
+    "execution_id": "EXEC_AA1038FBC6",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -528,10 +528,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.785024+00:00"
+    "timestamp": "2026-09-04T03:53:25.125577+00:00"
   },
   {
-    "audit_id": "AUD_A792C2EE",
+    "audit_id": "AUD_B6EE92B6",
     "txn_id": "TXN_0026",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -544,7 +544,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0026:RETRY_PAYMENT",
-    "execution_id": "EXEC_948A09F143",
+    "execution_id": "EXEC_19E45D5D52",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -559,10 +559,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.846251+00:00"
+    "timestamp": "2026-09-04T03:53:25.154852+00:00"
   },
   {
-    "audit_id": "AUD_D48E69FA",
+    "audit_id": "AUD_88F821E0",
     "txn_id": "TXN_0028",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -575,7 +575,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0028:SEND_NUDGE",
-    "execution_id": "EXEC_61F5799F46",
+    "execution_id": "EXEC_8DF12A6CDC",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -590,10 +590,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.910828+00:00"
+    "timestamp": "2026-09-04T03:53:25.183852+00:00"
   },
   {
-    "audit_id": "AUD_7009EBC1",
+    "audit_id": "AUD_5219FA13",
     "txn_id": "TXN_0030",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -606,7 +606,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0030:RETRY_PAYMENT",
-    "execution_id": "EXEC_F52B4D8117",
+    "execution_id": "EXEC_E44A0E3099",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -621,10 +621,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:04.966989+00:00"
+    "timestamp": "2026-09-04T03:53:25.211364+00:00"
   },
   {
-    "audit_id": "AUD_EE967A5A",
+    "audit_id": "AUD_7C67E3F8",
     "txn_id": "TXN_0031",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -637,17 +637,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0031:MANUAL_REVIEW",
-    "execution_id": "EXEC_5EBA87992D",
+    "execution_id": "EXEC_18E73F06F0",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:05.030373+00:00"
+    "timestamp": "2026-09-04T03:53:25.248813+00:00"
   },
   {
-    "audit_id": "AUD_482A31CA",
+    "audit_id": "AUD_6A50C21F",
     "txn_id": "TXN_0032",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -660,7 +660,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0032:SEND_NUDGE",
-    "execution_id": "EXEC_7160952628",
+    "execution_id": "EXEC_1424282F41",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -675,10 +675,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.110098+00:00"
+    "timestamp": "2026-09-04T03:53:25.280820+00:00"
   },
   {
-    "audit_id": "AUD_B4A4B278",
+    "audit_id": "AUD_84FB2065",
     "txn_id": "TXN_0033",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -691,7 +691,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0033:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_4FC4E1A49F",
+    "execution_id": "EXEC_22E5BBCF98",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -706,10 +706,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.180480+00:00"
+    "timestamp": "2026-09-04T03:53:25.311809+00:00"
   },
   {
-    "audit_id": "AUD_64F4F96D",
+    "audit_id": "AUD_D024E6DC",
     "txn_id": "TXN_0034",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -722,7 +722,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0034:RETRY_PAYMENT",
-    "execution_id": "EXEC_C9B8642EDD",
+    "execution_id": "EXEC_BB081CAF3C",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -737,10 +737,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.240558+00:00"
+    "timestamp": "2026-09-04T03:53:25.345899+00:00"
   },
   {
-    "audit_id": "AUD_DA3F79CE",
+    "audit_id": "AUD_3DB50EC4",
     "txn_id": "TXN_0035",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -753,7 +753,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0035:SEND_NUDGE",
-    "execution_id": "EXEC_375A3B1538",
+    "execution_id": "EXEC_639C84BFF3",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -768,10 +768,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.297319+00:00"
+    "timestamp": "2026-09-04T03:53:25.375816+00:00"
   },
   {
-    "audit_id": "AUD_7105D3F4",
+    "audit_id": "AUD_42CFF2CB",
     "txn_id": "TXN_0036",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -784,7 +784,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0036:RETRY_PAYMENT",
-    "execution_id": "EXEC_815E882988",
+    "execution_id": "EXEC_E6591B6F29",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -799,10 +799,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.363270+00:00"
+    "timestamp": "2026-09-04T03:53:25.406811+00:00"
   },
   {
-    "audit_id": "AUD_71A40497",
+    "audit_id": "AUD_768A6C7A",
     "txn_id": "TXN_0037",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -815,7 +815,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0037:RETRY_PAYMENT",
-    "execution_id": "EXEC_3EEC67283F",
+    "execution_id": "EXEC_FBCE0DC18A",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -830,10 +830,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.429218+00:00"
+    "timestamp": "2026-09-04T03:53:25.439820+00:00"
   },
   {
-    "audit_id": "AUD_822D7903",
+    "audit_id": "AUD_A6E10830",
     "txn_id": "TXN_0038",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -846,17 +846,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0038:MANUAL_REVIEW",
-    "execution_id": "EXEC_40036812EE",
+    "execution_id": "EXEC_8CEA2652A5",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:05.491833+00:00"
+    "timestamp": "2026-09-04T03:53:25.473822+00:00"
   },
   {
-    "audit_id": "AUD_51429F53",
+    "audit_id": "AUD_F1B96EF0",
     "txn_id": "TXN_0039",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -869,7 +869,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0039:SEND_NUDGE",
-    "execution_id": "EXEC_A8EB14598D",
+    "execution_id": "EXEC_EAEAFB2563",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -884,10 +884,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.555543+00:00"
+    "timestamp": "2026-09-04T03:53:25.506547+00:00"
   },
   {
-    "audit_id": "AUD_16C969D7",
+    "audit_id": "AUD_D081B521",
     "txn_id": "TXN_0040",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -900,7 +900,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0040:RETRY_PAYMENT",
-    "execution_id": "EXEC_C63C512B03",
+    "execution_id": "EXEC_5E8D27FCDD",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -915,10 +915,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.618637+00:00"
+    "timestamp": "2026-09-04T03:53:25.537546+00:00"
   },
   {
-    "audit_id": "AUD_42F2D3AA",
+    "audit_id": "AUD_EE3498FA",
     "txn_id": "TXN_0041",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -931,7 +931,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0041:SEND_NUDGE",
-    "execution_id": "EXEC_15BA0CF86C",
+    "execution_id": "EXEC_70B75F1198",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -946,10 +946,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.682456+00:00"
+    "timestamp": "2026-09-04T03:53:25.568134+00:00"
   },
   {
-    "audit_id": "AUD_22F794F8",
+    "audit_id": "AUD_C33EB059",
     "txn_id": "TXN_0043",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -962,7 +962,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0043:RETRY_PAYMENT",
-    "execution_id": "EXEC_1CD65D85BF",
+    "execution_id": "EXEC_9B0BFAF43F",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -977,10 +977,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.744334+00:00"
+    "timestamp": "2026-09-04T03:53:25.603130+00:00"
   },
   {
-    "audit_id": "AUD_0A9D1AEC",
+    "audit_id": "AUD_0113E0BA",
     "txn_id": "TXN_0044",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -993,7 +993,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0044:SEND_NUDGE",
-    "execution_id": "EXEC_1101A0D4CF",
+    "execution_id": "EXEC_901C741922",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1008,10 +1008,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.812883+00:00"
+    "timestamp": "2026-09-04T03:53:25.642392+00:00"
   },
   {
-    "audit_id": "AUD_20B70DC5",
+    "audit_id": "AUD_31660A2D",
     "txn_id": "TXN_0045",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -1024,7 +1024,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0045:SEND_NUDGE",
-    "execution_id": "EXEC_2BAE1EADAE",
+    "execution_id": "EXEC_2A81E1C6E1",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1039,10 +1039,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.876948+00:00"
+    "timestamp": "2026-09-04T03:53:25.682415+00:00"
   },
   {
-    "audit_id": "AUD_B19161F0",
+    "audit_id": "AUD_BAE1ED2A",
     "txn_id": "TXN_0046",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1055,7 +1055,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0046:RETRY_PAYMENT",
-    "execution_id": "EXEC_214C1CBA6B",
+    "execution_id": "EXEC_0676DA2A53",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1070,10 +1070,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:05.957828+00:00"
+    "timestamp": "2026-09-04T03:53:25.714777+00:00"
   },
   {
-    "audit_id": "AUD_6D9DB9B9",
+    "audit_id": "AUD_7C07B481",
     "txn_id": "TXN_0047",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -1086,7 +1086,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0047:RETRY_PAYMENT",
-    "execution_id": "EXEC_FA7596FD79",
+    "execution_id": "EXEC_92A32A5C80",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1101,10 +1101,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.023197+00:00"
+    "timestamp": "2026-09-04T03:53:25.744854+00:00"
   },
   {
-    "audit_id": "AUD_C9590527",
+    "audit_id": "AUD_2B5B7A2A",
     "txn_id": "TXN_0048",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1117,17 +1117,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0048:MANUAL_REVIEW",
-    "execution_id": "EXEC_2F26333A56",
+    "execution_id": "EXEC_D24265C1B1",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:06.095496+00:00"
+    "timestamp": "2026-09-04T03:53:25.777788+00:00"
   },
   {
-    "audit_id": "AUD_05864F83",
+    "audit_id": "AUD_F9376426",
     "txn_id": "TXN_0049",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -1140,7 +1140,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0049:SEND_NUDGE",
-    "execution_id": "EXEC_C63A08F5DD",
+    "execution_id": "EXEC_4E21E3C4EE",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1155,10 +1155,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.172419+00:00"
+    "timestamp": "2026-09-04T03:53:25.809812+00:00"
   },
   {
-    "audit_id": "AUD_24389B72",
+    "audit_id": "AUD_72433F24",
     "txn_id": "TXN_0050",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -1171,7 +1171,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0050:RETRY_PAYMENT",
-    "execution_id": "EXEC_C2F7B4E7DA",
+    "execution_id": "EXEC_C1C9A9B559",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1186,10 +1186,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.242573+00:00"
+    "timestamp": "2026-09-04T03:53:25.843778+00:00"
   },
   {
-    "audit_id": "AUD_9E4C42CA",
+    "audit_id": "AUD_012F87E4",
     "txn_id": "TXN_0052",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1202,7 +1202,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0052:RETRY_PAYMENT",
-    "execution_id": "EXEC_7DC640BB3F",
+    "execution_id": "EXEC_47B23BA055",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1217,10 +1217,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.308205+00:00"
+    "timestamp": "2026-09-04T03:53:25.876844+00:00"
   },
   {
-    "audit_id": "AUD_26831345",
+    "audit_id": "AUD_4D911037",
     "txn_id": "TXN_0053",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1233,7 +1233,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0053:RETRY_PAYMENT",
-    "execution_id": "EXEC_47CE11BB79",
+    "execution_id": "EXEC_EF521E43F7",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1248,10 +1248,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.398598+00:00"
+    "timestamp": "2026-09-04T03:53:25.909850+00:00"
   },
   {
-    "audit_id": "AUD_6E106E96",
+    "audit_id": "AUD_DC6749B5",
     "txn_id": "TXN_0054",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -1264,7 +1264,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0054:SEND_NUDGE",
-    "execution_id": "EXEC_2AE2EA185B",
+    "execution_id": "EXEC_E68940A288",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1279,10 +1279,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.471668+00:00"
+    "timestamp": "2026-09-04T03:53:25.941778+00:00"
   },
   {
-    "audit_id": "AUD_A1F30912",
+    "audit_id": "AUD_EB1CF3D1",
     "txn_id": "TXN_0055",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1295,7 +1295,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0055:RETRY_PAYMENT",
-    "execution_id": "EXEC_65B5138A9B",
+    "execution_id": "EXEC_3FC3BD422E",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1310,10 +1310,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.535762+00:00"
+    "timestamp": "2026-09-04T03:53:25.976856+00:00"
   },
   {
-    "audit_id": "AUD_63BBE504",
+    "audit_id": "AUD_2089FBE2",
     "txn_id": "TXN_0056",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -1326,7 +1326,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0056:SEND_NUDGE",
-    "execution_id": "EXEC_BFEE6F7172",
+    "execution_id": "EXEC_2137D3B654",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1341,10 +1341,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.603565+00:00"
+    "timestamp": "2026-09-04T03:53:26.018392+00:00"
   },
   {
-    "audit_id": "AUD_F0E63284",
+    "audit_id": "AUD_BC670054",
     "txn_id": "TXN_0057",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -1357,7 +1357,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0057:SEND_NUDGE",
-    "execution_id": "EXEC_0C3CDF6C28",
+    "execution_id": "EXEC_E63F88CB15",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1372,10 +1372,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.675946+00:00"
+    "timestamp": "2026-09-04T03:53:26.065968+00:00"
   },
   {
-    "audit_id": "AUD_BFBF03CB",
+    "audit_id": "AUD_79899898",
     "txn_id": "TXN_0058",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1388,7 +1388,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0058:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_9CBB944795",
+    "execution_id": "EXEC_90C88E6C1C",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1403,10 +1403,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.742849+00:00"
+    "timestamp": "2026-09-04T03:53:26.098411+00:00"
   },
   {
-    "audit_id": "AUD_485759F1",
+    "audit_id": "AUD_E51423FD",
     "txn_id": "TXN_0059",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1419,7 +1419,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0059:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_BE0475A15B",
+    "execution_id": "EXEC_282A05D4F0",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1434,10 +1434,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.814263+00:00"
+    "timestamp": "2026-09-04T03:53:26.135410+00:00"
   },
   {
-    "audit_id": "AUD_2E610E49",
+    "audit_id": "AUD_B398D706",
     "txn_id": "TXN_0061",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -1450,17 +1450,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0061:MANUAL_REVIEW",
-    "execution_id": "EXEC_8BD5F750A4",
+    "execution_id": "EXEC_26924A920B",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:06.882734+00:00"
+    "timestamp": "2026-09-04T03:53:26.169645+00:00"
   },
   {
-    "audit_id": "AUD_2F1D1506",
+    "audit_id": "AUD_2152EBEE",
     "txn_id": "TXN_0062",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1473,7 +1473,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0062:RETRY_PAYMENT",
-    "execution_id": "EXEC_31C9B7C06C",
+    "execution_id": "EXEC_A11C49CE62",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1488,10 +1488,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:06.950137+00:00"
+    "timestamp": "2026-09-04T03:53:26.205645+00:00"
   },
   {
-    "audit_id": "AUD_AA06C6F1",
+    "audit_id": "AUD_6E22DFF0",
     "txn_id": "TXN_0063",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -1504,7 +1504,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0063:SEND_NUDGE",
-    "execution_id": "EXEC_31F24EAC58",
+    "execution_id": "EXEC_FEBAB7B55D",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1519,10 +1519,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.025332+00:00"
+    "timestamp": "2026-09-04T03:53:26.240643+00:00"
   },
   {
-    "audit_id": "AUD_8C110E38",
+    "audit_id": "AUD_48F087F6",
     "txn_id": "TXN_0064",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1535,7 +1535,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0064:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_8EC727EEA2",
+    "execution_id": "EXEC_ADB3526A55",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1550,10 +1550,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.103944+00:00"
+    "timestamp": "2026-09-04T03:53:26.273647+00:00"
   },
   {
-    "audit_id": "AUD_5DD929F3",
+    "audit_id": "AUD_E717835C",
     "txn_id": "TXN_0065",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -1566,7 +1566,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0065:SEND_NUDGE",
-    "execution_id": "EXEC_EC2748FBF6",
+    "execution_id": "EXEC_D68699BBD8",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1581,10 +1581,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.177268+00:00"
+    "timestamp": "2026-09-04T03:53:26.311652+00:00"
   },
   {
-    "audit_id": "AUD_F2B9FE2B",
+    "audit_id": "AUD_B79A323A",
     "txn_id": "TXN_0066",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -1597,7 +1597,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0066:SEND_NUDGE",
-    "execution_id": "EXEC_BEE0209402",
+    "execution_id": "EXEC_95580F8620",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1612,10 +1612,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.246809+00:00"
+    "timestamp": "2026-09-04T03:53:26.356645+00:00"
   },
   {
-    "audit_id": "AUD_C0D9097A",
+    "audit_id": "AUD_10BF2DBD",
     "txn_id": "TXN_0067",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1628,7 +1628,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0067:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_3411896EA2",
+    "execution_id": "EXEC_F3E1705BF4",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1643,10 +1643,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.320015+00:00"
+    "timestamp": "2026-09-04T03:53:26.399646+00:00"
   },
   {
-    "audit_id": "AUD_2A4DDB56",
+    "audit_id": "AUD_2BC7026C",
     "txn_id": "TXN_0069",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -1659,7 +1659,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0069:SEND_NUDGE",
-    "execution_id": "EXEC_0C38945116",
+    "execution_id": "EXEC_7EC76A9974",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1674,10 +1674,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.395461+00:00"
+    "timestamp": "2026-09-04T03:53:26.437643+00:00"
   },
   {
-    "audit_id": "AUD_09778E47",
+    "audit_id": "AUD_F6892476",
     "txn_id": "TXN_0070",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1690,7 +1690,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0070:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_1E6BE481D5",
+    "execution_id": "EXEC_9FA046F9B6",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1705,10 +1705,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.475027+00:00"
+    "timestamp": "2026-09-04T03:53:26.480642+00:00"
   },
   {
-    "audit_id": "AUD_193D8A5B",
+    "audit_id": "AUD_D1C937D9",
     "txn_id": "TXN_0071",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1721,7 +1721,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0071:RETRY_PAYMENT",
-    "execution_id": "EXEC_C2E386F35E",
+    "execution_id": "EXEC_39AB142A0E",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1736,10 +1736,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.549680+00:00"
+    "timestamp": "2026-09-04T03:53:26.519926+00:00"
   },
   {
-    "audit_id": "AUD_D821CEE7",
+    "audit_id": "AUD_E7A4ABF4",
     "txn_id": "TXN_0072",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1752,7 +1752,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0072:RETRY_PAYMENT",
-    "execution_id": "EXEC_871642DA49",
+    "execution_id": "EXEC_309D863FE9",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1767,10 +1767,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.625128+00:00"
+    "timestamp": "2026-09-04T03:53:26.555997+00:00"
   },
   {
-    "audit_id": "AUD_4111FFB8",
+    "audit_id": "AUD_C1D43C89",
     "txn_id": "TXN_0073",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -1783,7 +1783,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0073:RETRY_PAYMENT",
-    "execution_id": "EXEC_4131CB4A84",
+    "execution_id": "EXEC_E62A9F8963",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1798,10 +1798,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.699882+00:00"
+    "timestamp": "2026-09-04T03:53:26.591510+00:00"
   },
   {
-    "audit_id": "AUD_BA0888CA",
+    "audit_id": "AUD_4D2C635A",
     "txn_id": "TXN_0074",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -1814,7 +1814,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0074:RETRY_PAYMENT",
-    "execution_id": "EXEC_6E18D35319",
+    "execution_id": "EXEC_036302D41E",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1829,10 +1829,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.779862+00:00"
+    "timestamp": "2026-09-04T03:53:26.629445+00:00"
   },
   {
-    "audit_id": "AUD_8B93683E",
+    "audit_id": "AUD_6975A7FE",
     "txn_id": "TXN_0075",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -1845,7 +1845,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0075:SEND_NUDGE",
-    "execution_id": "EXEC_D2483D78E9",
+    "execution_id": "EXEC_5D1B59D812",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1860,10 +1860,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.852710+00:00"
+    "timestamp": "2026-09-04T03:53:26.665450+00:00"
   },
   {
-    "audit_id": "AUD_3A068032",
+    "audit_id": "AUD_153B6DCC",
     "txn_id": "TXN_0077",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1876,7 +1876,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0077:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_486EC1E5B0",
+    "execution_id": "EXEC_F1D98DE8E5",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1891,10 +1891,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:07.929518+00:00"
+    "timestamp": "2026-09-04T03:53:26.703603+00:00"
   },
   {
-    "audit_id": "AUD_3380EA90",
+    "audit_id": "AUD_4937333F",
     "txn_id": "TXN_0078",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -1907,7 +1907,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0078:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_F851959C46",
+    "execution_id": "EXEC_59889C8909",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -1922,10 +1922,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.004672+00:00"
+    "timestamp": "2026-09-04T03:53:26.750197+00:00"
   },
   {
-    "audit_id": "AUD_4418A7D9",
+    "audit_id": "AUD_F66FB992",
     "txn_id": "TXN_0079",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -1938,17 +1938,17 @@
     "cost_paise": 0,
     "status": "FALLBACK",
     "idempotency_key": "TXN_0079:MANUAL_REVIEW",
-    "execution_id": "EXEC_4D64924FCB",
+    "execution_id": "EXEC_8867C957B4",
     "execution_attempt": 0,
     "api_response": {
       "detail": "Escalated to human-in-the-loop manual review."
     },
     "retry_attempts": 0,
     "fallback_action": "MANUAL_REVIEW",
-    "timestamp": "2026-09-03T17:47:08.090087+00:00"
+    "timestamp": "2026-09-04T03:53:26.789115+00:00"
   },
   {
-    "audit_id": "AUD_F80C1DEB",
+    "audit_id": "AUD_B272B042",
     "txn_id": "TXN_0080",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -1961,7 +1961,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0080:SEND_NUDGE",
-    "execution_id": "EXEC_111429B5E9",
+    "execution_id": "EXEC_A36ADDF100",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -1976,10 +1976,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.178838+00:00"
+    "timestamp": "2026-09-04T03:53:26.825187+00:00"
   },
   {
-    "audit_id": "AUD_2E56EBD0",
+    "audit_id": "AUD_57A2E8BD",
     "txn_id": "TXN_0081",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -1992,7 +1992,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0081:SEND_NUDGE",
-    "execution_id": "EXEC_E83600C0E1",
+    "execution_id": "EXEC_F752445940",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2007,10 +2007,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.265489+00:00"
+    "timestamp": "2026-09-04T03:53:26.865119+00:00"
   },
   {
-    "audit_id": "AUD_A0579ECB",
+    "audit_id": "AUD_5E274160",
     "txn_id": "TXN_0082",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -2023,7 +2023,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0082:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_1D7AE71A8E",
+    "execution_id": "EXEC_B72259F7AD",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2038,10 +2038,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.365695+00:00"
+    "timestamp": "2026-09-04T03:53:26.901119+00:00"
   },
   {
-    "audit_id": "AUD_0DB50CD8",
+    "audit_id": "AUD_DEF1D855",
     "txn_id": "TXN_0083",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -2054,7 +2054,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0083:RETRY_PAYMENT",
-    "execution_id": "EXEC_7DDD50BA6B",
+    "execution_id": "EXEC_A38D6AC603",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2069,10 +2069,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.464274+00:00"
+    "timestamp": "2026-09-04T03:53:26.938192+00:00"
   },
   {
-    "audit_id": "AUD_7E1D8181",
+    "audit_id": "AUD_E8A8C0AD",
     "txn_id": "TXN_0086",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -2085,7 +2085,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0086:SEND_NUDGE",
-    "execution_id": "EXEC_92BA5109EA",
+    "execution_id": "EXEC_9D208F8159",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2100,10 +2100,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.543442+00:00"
+    "timestamp": "2026-09-04T03:53:26.977134+00:00"
   },
   {
-    "audit_id": "AUD_46F3DD0A",
+    "audit_id": "AUD_0EF8FD75",
     "txn_id": "TXN_0087",
     "trigger": "payment_failure",
     "failure_code": "card_expired",
@@ -2116,7 +2116,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0087:SEND_NUDGE",
-    "execution_id": "EXEC_8536D845B6",
+    "execution_id": "EXEC_7B760A95EE",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2131,10 +2131,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.619115+00:00"
+    "timestamp": "2026-09-04T03:53:27.016987+00:00"
   },
   {
-    "audit_id": "AUD_58569880",
+    "audit_id": "AUD_55E23B90",
     "txn_id": "TXN_0088",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -2147,7 +2147,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0088:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_48B74C5546",
+    "execution_id": "EXEC_AEE4533A97",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2162,10 +2162,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.697574+00:00"
+    "timestamp": "2026-09-04T03:53:27.056116+00:00"
   },
   {
-    "audit_id": "AUD_9176655C",
+    "audit_id": "AUD_AD15A44D",
     "txn_id": "TXN_0089",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -2178,7 +2178,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0089:SEND_NUDGE",
-    "execution_id": "EXEC_092CCCB558",
+    "execution_id": "EXEC_DFE3B70119",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2193,10 +2193,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.772781+00:00"
+    "timestamp": "2026-09-04T03:53:27.099108+00:00"
   },
   {
-    "audit_id": "AUD_7D2E6B88",
+    "audit_id": "AUD_9FCBAE21",
     "txn_id": "TXN_0090",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -2209,7 +2209,7 @@
     "cost_paise": 50,
     "status": "FAILED",
     "idempotency_key": "TXN_0090:SEND_NUDGE",
-    "execution_id": "EXEC_D37CF14363",
+    "execution_id": "EXEC_943058B0D4",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2224,10 +2224,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.858878+00:00"
+    "timestamp": "2026-09-04T03:53:27.145175+00:00"
   },
   {
-    "audit_id": "AUD_1B5B3AA6",
+    "audit_id": "AUD_7247ECE1",
     "txn_id": "TXN_0093",
     "trigger": "payment_failure",
     "failure_code": "3ds_dropoff",
@@ -2240,7 +2240,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0093:SEND_NUDGE",
-    "execution_id": "EXEC_535209446B",
+    "execution_id": "EXEC_F924226195",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2255,10 +2255,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:08.940003+00:00"
+    "timestamp": "2026-09-04T03:53:27.183328+00:00"
   },
   {
-    "audit_id": "AUD_1500A589",
+    "audit_id": "AUD_E0727F4A",
     "txn_id": "TXN_0094",
     "trigger": "payment_failure",
     "failure_code": "insufficient_funds",
@@ -2271,7 +2271,7 @@
     "cost_paise": 50,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0094:SEND_NUDGE",
-    "execution_id": "EXEC_E36EFFCB83",
+    "execution_id": "EXEC_80115428E4",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2286,10 +2286,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:09.015661+00:00"
+    "timestamp": "2026-09-04T03:53:27.220332+00:00"
   },
   {
-    "audit_id": "AUD_F84BB9FE",
+    "audit_id": "AUD_FF9305B7",
     "txn_id": "TXN_0095",
     "trigger": "payment_failure",
     "failure_code": "mandate_failure",
@@ -2302,7 +2302,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0095:SCHEDULE_MANDATE_RETRY",
-    "execution_id": "EXEC_CA6CA26FF9",
+    "execution_id": "EXEC_76FCA1B0F2",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2317,10 +2317,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:09.091339+00:00"
+    "timestamp": "2026-09-04T03:53:27.260371+00:00"
   },
   {
-    "audit_id": "AUD_7A873A0A",
+    "audit_id": "AUD_6E1A36D8",
     "txn_id": "TXN_0098",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -2333,7 +2333,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0098:RETRY_PAYMENT",
-    "execution_id": "EXEC_0238A95ED6",
+    "execution_id": "EXEC_D419090F2F",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2348,10 +2348,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:09.174339+00:00"
+    "timestamp": "2026-09-04T03:53:27.301325+00:00"
   },
   {
-    "audit_id": "AUD_C0906845",
+    "audit_id": "AUD_F889657E",
     "txn_id": "TXN_0099",
     "trigger": "payment_failure",
     "failure_code": "bank_timeout",
@@ -2364,7 +2364,7 @@
     "cost_paise": 0,
     "status": "SUCCESS",
     "idempotency_key": "TXN_0099:RETRY_PAYMENT",
-    "execution_id": "EXEC_11A7C70645",
+    "execution_id": "EXEC_1FFE81D068",
     "execution_attempt": 0,
     "api_response": {
       "success": true,
@@ -2379,10 +2379,10 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:09.254005+00:00"
+    "timestamp": "2026-09-04T03:53:27.341325+00:00"
   },
   {
-    "audit_id": "AUD_297362E2",
+    "audit_id": "AUD_808C38F4",
     "txn_id": "TXN_0100",
     "trigger": "payment_failure",
     "failure_code": "network_error",
@@ -2395,7 +2395,7 @@
     "cost_paise": 0,
     "status": "FAILED",
     "idempotency_key": "TXN_0100:RETRY_PAYMENT",
-    "execution_id": "EXEC_8B830CA806",
+    "execution_id": "EXEC_635210EF2B",
     "execution_attempt": 0,
     "api_response": {
       "success": false,
@@ -2410,58 +2410,73 @@
     },
     "retry_attempts": 1,
     "fallback_action": null,
-    "timestamp": "2026-09-03T17:47:09.331775+00:00"
+    "timestamp": "2026-09-04T03:53:27.382331+00:00"
   },
   {
-    "audit_id": "AUD_57391274",
-    "txn_id": "TXN_0038",
-    "trigger": "human_manual_rejection",
-    "failure_code": "3ds_dropoff",
-    "ai_recommendation": "SEND_NUDGE",
-    "confidence": 0.87,
-    "reasoning": "The customer abandoned the 3DS verification challenge. Send a 1-click secure payment completion nudge.",
+    "audit_id": "AUD_75384DD2",
+    "txn_id": "TXN_HIGHVAL_001",
+    "trigger": "human_manual_approval",
+    "failure_code": "bank_timeout",
+    "ai_recommendation": "RETRY_PAYMENT",
+    "confidence": 0.92,
+    "reasoning": "The issuing bank gateway timed out before acknowledging the debit. A bounded smart retry after backoff is optimal.",
+    "policy_decision": "MANUAL_REVIEW",
+    "action": "MANUAL_REVIEW",
+    "amount_paise": 7250000,
+    "cost_paise": 0,
+    "status": "FALLBACK",
+    "idempotency_key": "TXN_HIGHVAL_001:MANUAL_APPROVED:RETRY_PAYMENT",
+    "execution_id": "EXEC_90CC0B340E",
+    "execution_attempt": 0,
+    "api_response": {
+      "detail": "Escalated to human-in-the-loop manual review."
+    },
+    "retry_attempts": 0,
+    "fallback_action": "MANUAL_REVIEW",
+    "timestamp": "2026-09-04T04:04:45.110038+00:00"
+  },
+  {
+    "audit_id": "AUD_0BDF56C5",
+    "txn_id": "TXN_AUDIT_TEST",
+    "trigger": "payment_failure",
+    "failure_code": "network_error",
+    "ai_recommendation": "RETRY_PAYMENT",
+    "confidence": 0.94,
+    "reasoning": "Transient error",
     "policy_decision": "APPROVED",
-    "action": "SEND_NUDGE",
-    "amount_paise": 99900,
+    "action": "RETRY_PAYMENT",
+    "amount_paise": 499900,
+    "cost_paise": 0,
+    "status": "SUCCESS",
+    "idempotency_key": "TXN_AUDIT_TEST:RETRY_PAYMENT",
+    "execution_id": "EXEC_TEST_123",
+    "execution_attempt": 0,
+    "api_response": {
+      "result": "recovered"
+    },
+    "retry_attempts": 0,
+    "fallback_action": null,
+    "timestamp": "2026-09-04T04:04:45.189958+00:00"
+  },
+  {
+    "audit_id": "AUD_5E732B43",
+    "txn_id": "TXN_IDEM_001",
+    "trigger": "payment_failure",
+    "failure_code": "network_error",
+    "ai_recommendation": "RETRY_PAYMENT",
+    "confidence": 0.92,
+    "reasoning": "Transient error",
+    "policy_decision": "APPROVED",
+    "action": "RETRY_PAYMENT",
+    "amount_paise": 29900,
     "cost_paise": 0,
     "status": "PENDING_EXECUTION",
-    "idempotency_key": "TXN_0038:MANUAL_REJECTED",
+    "idempotency_key": "TXN_IDEM_001:RETRY_PAYMENT",
     "execution_id": null,
     "execution_attempt": 0,
     "api_response": null,
     "retry_attempts": 0,
     "fallback_action": null,
-    "timestamp": "2026-09-03T18:30:05.567075+00:00"
-  },
-  {
-    "audit_id": "AUD_9B42AEC6",
-    "txn_id": "TXN_0031",
-    "trigger": "human_manual_approval",
-    "failure_code": "insufficient_funds",
-    "ai_recommendation": "SEND_NUDGE",
-    "confidence": 0.88,
-    "reasoning": "Payment declined due to insufficient balance. Sending an SMS/WhatsApp nudge with a delayed retry option.",
-    "policy_decision": "APPROVED",
-    "action": "SEND_NUDGE",
-    "amount_paise": 999900,
-    "cost_paise": 50,
-    "status": "SUCCESS",
-    "idempotency_key": "TXN_0031:MANUAL_APPROVED:RETRY_PAYMENT",
-    "execution_id": "EXEC_9DA8CC5247",
-    "execution_attempt": 0,
-    "api_response": {
-      "success": true,
-      "status": "SUCCESS",
-      "message": "Simulated SEND_NUDGE completed successfully",
-      "execution_mode": "SIMULATED_RECOVERY_OPERATION",
-      "is_simulated": true,
-      "probability_score": 0.52,
-      "roll_value": 0.376,
-      "retry_attempts": 1,
-      "latency_ms": 120
-    },
-    "retry_attempts": 1,
-    "fallback_action": null,
-    "timestamp": "2026-09-03T18:30:08.887573+00:00"
+    "timestamp": "2026-09-04T04:04:45.254043+00:00"
   }
 ]
